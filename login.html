@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlaysSpot Login</title>
+    <style>
+        /* General Setup and Fonts */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6cb; /* Light gray background */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- 1. Header Navigation Bar --- */
+        .header {
+            background-color: #1B3C53;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* PlaysSpot Logo (Text-only) */
+        .logo {
+            font-size: 1.8em; 
+            font-weight: 700;
+            color: white; 
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color:white;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #007bff;
+        }
+
+        .nav-links .active {
+            color: white;
+            font-weight: 700;
+        }
+
+        /* --- 2. Main Content Container (Flex Centering) --- */
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* --- 3. Login Card Layout (The White Box) --- */
+        .login-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            overflow: hidden; 
+            padding-left: 0px;
+        }
+
+        /* Right Side: Login Title and Form */
+        .login-details {
+            padding: 40px;
+            flex: 1; 
+        }
+
+        /* Login Strip: Now covers the full width of the form side */
+        .login-header {
+            background-color: #002d5c; /* Dark Blue */
+            color: white;
+            padding: 15px 40px;
+            margin: -40px; /* Pulls the header to the edge of the card (top, right, bottom margins are negative 40px) */
+            margin-bottom: 40px;
+            font-size: 1.8em;
+            font-weight: 500;
+            border-top-left-radius: 8px; /* Match card radius for the top left corner */
+        }
+
+        /* Left Side: Pitch Photo Area */
+        .illustration-area {
+            flex: 1; 
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px; 
+        }
+        
+        /* Styling for the pitch image */
+        .illustration-area img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 4px; 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* --- 4. Form Styling (Flexbox Usage) --- */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; 
+            width: 100%;
+            max-width: 350px; 
+            margin: 0 auto; 
+            margin-top: 50px; /* Added margin to push fields down */
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Input Fields */
+        .form-group input[type="text"], 
+        .form-group input[type="password"] {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            margin-top: 5px; 
+        }
+        
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+
+        /* Remember Me / Forgot Password Layout */
+        .options-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: -10px; 
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+
+        .remember-me input {
+            margin-right: 5px;
+        }
+
+        .forgot-password a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Login Button */
+        .login-button {
+            padding: 12px 25px;
+            background-color: #007bffa7; 
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Create Account Link */
+        .signup-link {
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .signup-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* --- 5. Responsiveness --- */
+        @media (max-width: 768px) {
+            .login-card {
+                flex-direction: column;
+            }
+
+            .illustration-area {
+                display: none; 
+            }
+            
+            .login-header {
+                padding: 0px;
+                margin: -30px; 
+                margin-bottom: 50px;
+            }
+
+            .login-details {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            PlaySpot
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="active">Login</a>
+            <a href="#">Sign Up</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="login-card">
+            
+            <div class="illustration-area">
+                
+                <img src="https://img.freepik.com/free-photo/view-soccer-field-with-grass_23-2150887297.jpg?semt=ais_hybrid&w=740&q=80" alt="Indoor Box Cricket Pitch">
+            </div>
+
+            <div class="login-details">
+                <div class="login-header">Login</div>
+
+                <form class="login-form">
+                    
+                    <div class="form-group">
+                        <input type="text" id="email" name="email" required placeholder="Email or Username">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" required placeholder="Password">
+                    </div>
+
+                    <div class="options-row">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            Remember Me
+                        </label>
+                        <div class="forgot-password">
+                            <a href="#">Forgot password?</a>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="login-button">LOG IN</button>
+                    
+                    <div class="signup-link">
+                        Don't have an account? <a href="#">Create an Account</a>
+                    </div>
+
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

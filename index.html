@@ -1,11 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <title>PlaySpot</title>
+  <style>
+    *{
+        margin:0;
+    }
+    .navbar {
+            background-color:white;
+            padding: 27px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color:#002d5c ;
+        }
+
+        .bookings a{
+            color:#002d5c;
+            padding-left: 30px;
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #002d5c;
+            margin-left: 25px;
+            font-weight: 500;
+        }
+        .nav-links a:hover{
+            
+        }
+        
+        .hero-section {
+            
+            background-image: url('https://www.boxcrick.com/static/img/home-6.avif'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative; 
+        }
+
+       
+
+        /* Content Wrapper */
+        .hero-content {
+            z-index: 2; /* Ensure content is above the overlay */
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        /* Main Heading */
+        .main-heading {
+            font-size: 3.5em; /* Large text */
+            font-weight: 700;
+            padding-bottom: 250px;
+            color:#ffffff
+        }
+
+        /* Subtext */
+        .sub-text {
+            font-size: 1.2em;
+            padding-bottom: 150px;
+            line-height: 1.5;
+            /* Highlight the 'AI-powered search' part, like in the image */
+        }
+        
+        .sub-text strong {
+            display: block; 
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        /* Search Container */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white box for the search area */
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            max-width: 600px; /* Constrain the search bar width */
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Search Input */
+        .search-input {
+            flex-grow: 1; /* Takes up most of the space */
+            padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            color: #333;
+            background: transparent; /* Makes input background match container */
+        }
+        
+        /* Placeholder styling */
+        .search-input::placeholder {
+            color: #999;
+            font-style: italic;
+        }
+
+        .search-button {
+            padding: 15px 30px;
+            background-color: #e59400; /* A warm orange/brown color for the button */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-left: 10px;
+        }
+
+        .search-button:hover {
+            background-color: #cc8400;
+        }
+        .search-icon {
+            color: #666;
+            margin-left: 10px;
+            font-size: 1.2em;
+            display: none; /* Hide for simplicity, a real implementation would use an actual icon library */
+        }
+
+        
+        
+    footer {
+      background-color: #2f3240;
+      color: #ffffff;
+      padding: 45px 60px;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap; 
+    }
+
+    .footer-section {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-width: 240px;
+    }
+
+    /* LEFT */
+    .footer-left .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color:#ffffff
+    }
+
+    .footer-left .tagline {
+      opacity: 0.8;
+    }
+
+    .footer-left .copyright {
+      margin-top: 6px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    /* CENTER (Contact) */
+    .footer-center {
+      text-align: left;
+    }
+
+    .footer-center p {
+      margin: 0;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    /* RIGHT */
+    .footer-right {
+      text-align: left;
+    }
+
+    .footer-right a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .footer-right a:hover {
+      opacity: 1;
+    }
+
+
+      .footer-right {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 <body>
+
+<div class="navbar">
+        <div class="logo">PlaySpot</div>
+        <div class="bookings"> <a href="#">Find a Field</a>
+          <a href="#">My Bookings</a>
+           <a href="#">For Owners</a></div>
+        <div class="nav-links">
+            <a href="#">Login</a>
+            <a href="#">Sign Up</a>
+        </div>
+    </div>
+
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="main-heading">Smart Sports Field Booking</h1>
+        <p class="sub-text">
+            Find and book your favorite Padel and Cricket fields in seconds.
+            
+        </p>
+
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input 
+                type="text" 
+                class="search-input" 
+                placeholder="e.g. cricket pitch near flat for tomorrow evening"  />
+            <button class="search-button">Search</button>
+        </div>
+    </div>
     
+</div>
+
+<!-- /*Footer strts from here -->
+<footer>
+  <div class="footer-container">
+
+
+    <div class="footer-section footer-left">
+      <div class="logo">PlaySpot</div>
+      <div class="tagline"></div>
+      <div class="copyright">© 2025–26 PlaySpot. All rights reserved.</div>
+    </div>
+
+    
+    <div class="footer-section footer-center">
+      <p style="font-weight: bold; font-size: 23px;">Contact Us</p>
+      <p>AIR UNIVERSITY</p>
+      <p>+92 346 5535959</p>
+      <p>abbassalman234@gmail.com</p>
+    </div>
+
+    
+    <div class="footer-section footer-right">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms and Conditions</a>
+    </div>
+
+  </div>
+</footer>
+
 </body>
 </html>
+
+
+
+
