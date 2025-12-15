@@ -3,73 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlaysSpot Login</title>
-    <style>
-        /* General Setup and Fonts */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
+    <title>PlaySpot login</title>
+</head>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #9966CC;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5),  rgba(0, 0, 0, 0.5) ), url("https://www.boxcrick.com/static/img/home-6.avif");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
 
-        body {
-            background-color: #f4f7f6cb; /* Light gray background */
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
 
-        /* --- 1. Header Navigation Bar --- */
-        .header {
-            background-color: #1B3C53;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #eee;
-        }
+.header {
+    position: fixed;     
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
 
-        /* PlaysSpot Logo (Text-only) */
-        .logo {
-            font-size: 1.8em; 
-            font-weight: 700;
-            color: white; 
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color:white;
-            margin-left: 25px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
+.navbar {
+    background-color: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto', Arial, sans-serif;
+}
 
-        .nav-links a:hover {
-            color: #007bff;
-        }
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #002d5c;
+}
 
-        .nav-links .active {
-            color: white;
-            font-weight: 700;
-        }
+.bookings a {
+    color: #002d5c;
+    padding-left: 30px;
+    text-decoration: none;
+}
+.bookings a:hover{
+    color:#007bff;
+}
 
-        /* --- 2. Main Content Container (Flex Centering) --- */
-        .main-content {
+.nav-links a {
+    text-decoration: none;
+    color: #002d5c;
+    margin-left: 25px;
+    font-weight: 500;
+    
+}
+.nav-links a:hover{
+    border-bottom: 3px solid #002d5c;
+    padding-bottom: 4px;
+    
+}
+.main-content {
             flex-grow: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px;
+            padding: 130px 20px;
         }
 
         /* --- 3. Login Card Layout (The White Box) --- */
         .login-card {
             background-color: white;
-            border-radius: 8px;
+            border-radius: 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 900px;
+            max-width: 680px;
             display: flex;
             overflow: hidden; 
             padding-left: 0px;
@@ -90,22 +96,19 @@
             margin-bottom: 40px;
             font-size: 1.8em;
             font-weight: 500;
-            border-top-left-radius: 8px; /* Match card radius for the top left corner */
+            border-top-left-radius: 0px; /* Match card radius for the top left corner */
         }
 
         /* Left Side: Pitch Photo Area */
         .illustration-area {
-            flex: 1; 
-            background-color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px; 
+          width: 50%;
+            background: url("https://img.freepik.com/free-photo/view-soccer-field-with-grass_23-2150887297.jpg?semt=ais_hybrid&w=740&q=80");
+            background-size: cover;
         }
         
         /* Styling for the pitch image */
         .illustration-area img {
-            max-width: 90%;
+            max-width: 100%;
             height: auto;
             border-radius: 4px; 
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -184,7 +187,7 @@
             background-color: #0056b3;
         }
 
-        /* Create Account Link */
+        
         .signup-link {
             text-align: center;
             font-size: 0.9em;
@@ -196,41 +199,92 @@
             text-decoration: none;
             font-weight: 500;
         }
+        footer {
+      background-color: #2f3240;
+      color: #ffffff;
+      padding: 45px 60px;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
 
-        /* --- 5. Responsiveness --- */
-        @media (max-width: 768px) {
-            .login-card {
-                flex-direction: column;
-            }
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap; 
+    }
 
-            .illustration-area {
-                display: none; 
-            }
-            
-            .login-header {
-                padding: 0px;
-                margin: -30px; 
-                margin-bottom: 50px;
-            }
+    .footer-section {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-width: 240px;
+    }
 
-            .login-details {
-                padding: 30px;
-            }
-        }
-    </style>
-</head>
-<body>
+    /* LEFT */
+    .footer-left .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color:#ffffff
+    }
 
+    .footer-left .tagline {
+      opacity: 0.8;
+    }
+
+    .footer-left .copyright {
+      margin-top: 6px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    /* CENTER (Contact) */
+    .footer-center {
+      text-align: left;
+    }
+
+    .footer-center p {
+      margin: 0;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    /* RIGHT */
+    .footer-right {
+      text-align: left;
+    }
+
+    .footer-right a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .footer-right a:hover {
+      opacity: 1;
+    }
+
+
+      .footer-right {
+        text-align: left;
+      }
+        </style>
+<body> 
     <header class="header">
-        <div class="logo">
-            PlaySpot
-        </div>
-        <nav class="nav-links">
-            <a href="#" class="active">Login</a>
+        <div class="navbar">
+        <div class="logo">PlaySpot</div>
+        <div class="bookings"> <a href="#">Find a Field</a>
+          <a href="#">My Bookings</a>
+           <a href="#">For Owners</a></div>
+        <div class="nav-links">
+            <a href="#">Login</a>
             <a href="#">Sign Up</a>
-        </nav>
+        </div>
+    </div>
     </header>
-
     <div class="main-content">
         <div class="login-card">
             
@@ -273,5 +327,31 @@
             
         </div>
     </div>
+   <footer>
+  <div class="footer-container">
+
+
+    <div class="footer-section footer-left">
+      <div class="logo">PlaySpot</div>
+      <div class="tagline"></div>
+      <div class="copyright">© 2025–26 PlaySpot. All rights reserved.</div>
+    </div>
+
+    
+    <div class="footer-section footer-center">
+      <p style="font-weight: bold; font-size: 23px;">Contact Us</p>
+      <p>AIR UNIVERSITY</p>
+      <p>+92 346 5535959</p>
+      <p>abbassalman234@gmail.com</p>
+    </div>
+
+    
+    <div class="footer-section footer-right">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms and Conditions</a>
+    </div>
+
+  </div>
+</footer>
 </body>
 </html>
