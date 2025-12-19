@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlaySpot login</title>
+    <title>PlaySpot</title>
 </head>
 <style>
+    .header {
+    position: fixed;     
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -17,13 +24,7 @@ body {
 }
 
 
-.header {
-    position: fixed;     
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
+
 
 .navbar {
     background-color: white;
@@ -33,7 +34,9 @@ body {
     align-items: center;
     font-family: 'Roboto', Arial, sans-serif;
 }
-
+.navbar a{
+    text-decoration: none;
+}
 .logo {
     font-size: 1.8em;
     font-weight: 700;
@@ -275,13 +278,15 @@ body {
 <body> 
     <header class="header">
         <div class="navbar">
-        <div class="logo">PlaySpot</div>
+       <a href="./Homepage.html">
+         <div class="logo">PlaySpot</div>
+        </a>
         <div class="bookings"> <a href="#">Find a Field</a>
           <a href="#">My Bookings</a>
            <a href="#">For Owners</a></div>
         <div class="nav-links">
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
+            <a href="./loginn.html">Login</a>
+            <a href="./Signup.html">Sign Up</a>
         </div>
     </div>
     </header>
@@ -296,7 +301,7 @@ body {
             <div class="login-details">
                 <div class="login-header">Login</div>
 
-                <form class="login-form">
+                <form class="login-form" action="./Homepage.html">
                     
                     <div class="form-group">
                         <input type="text" id="email" name="email" required placeholder="Email or Username">
@@ -319,7 +324,7 @@ body {
                     <button type="submit" class="login-button">LOG IN</button>
                     
                     <div class="signup-link">
-                        Don't have an account? <a href="#">Create an Account</a>
+                        Don't have an account? <a href="./Signup.html">Create an Account</a>
                     </div>
 
                 </form>
@@ -327,6 +332,9 @@ body {
             
         </div>
     </div>
+
+
+<!-- =============FOOTER SECTION============== -->
    <footer>
   <div class="footer-container">
 

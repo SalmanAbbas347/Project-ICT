@@ -1,223 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PlaySpot Signup</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlaySpot Signup</title>
 
-<style>
-/* RESET */
-body {
-    margin: 0;
-    font-family: 'Roboto', Arial, sans-serif;
-    background-color: #f4f6f9;
-}
+    <style>
+        /* RESET */
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f4f6f9;
+        }
 
-/* ================= NAVBAR ================= */
-.site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
+        /* ================= NAVBAR ================= */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
 
-.navbar {
-    background-color: #002d5c;
-    padding: 20px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .navbar {
+            background-color: #002d5c;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.logo {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: white;
-}
+        .navbar a {
+            text-decoration: none;
+        }
 
-.bookings a,
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: 500;
-}
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: white;
+        }
 
-.bookings a:hover,
-.nav-links a:hover {
-    color: #007bff;
-}
+        .bookings a,
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+        }
 
-/* ================= MAIN ================= */
-.main {
-    margin: 100px auto 60px;
-    width: 70%;
-    max-width: 980px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
+        .bookings a:hover,
+        .nav-links a:hover {
+            color: #007bff;
+        }
 
-.main-header {
-    background-color: #002d5c;
-    color: #ffffff;
-    padding: 15px 30px;
-    font-size: 1.8em;
-    border-radius: 0px;
-}
+        /* ================= MAIN ================= */
+        .main {
+            margin: 100px auto 60px;
+            width: 70%;
+            max-width: 980px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
-.content {
-    padding: 30px 20px 60px;
-    text-align: center;
-}
+        .main-header {
+            background-color: #002d5c;
+            color: #ffffff;
+            padding: 15px 30px;
+            font-size: 1.8em;
+            border-radius: 0px;
+        }
 
-.content h2 {
-    margin-top: 10px;
-    margin-bottom: 29px;
-    color: #333;
-}
+        .content {
+            padding: 30px 20px 60px;
+            text-align: center;
+        }
 
-/* ================= CARDS ================= */
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
+        .content h2 {
+            margin-top: 10px;
+            margin-bottom: 29px;
+            color: #333;
+        }
 
-.card {
-    width: 260px;
-    height: 230px;
-    border: 2px solid #007bffa7;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+        /* ================= CARDS ================= */
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
 
-.card img {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 15px;
-    transition: filter 0.3s ease;
-}
+        .card {
+            width: 260px;
+            height: 230px;
+            border: 2px solid #007bffa7;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-.card h3 {
-    font-size: 1.6em;
-    color: #234C6A;
-}
+        .card img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 15px;
+            transition: filter 0.3s ease;
+        }
 
-.card:hover {
-    background-color: #1B3C53;
-}
+        .card h3 {
+            font-size: 1.6em;
+            color: #234C6A;
+        }
 
-.card:hover h3 {
-    color: #ffffff;
-}
+        .card:hover {
+            background-color: #1B3C53;
+        }
 
-.card:hover img {
-    filter: brightness(0) invert(1);
-}
+        .card:hover h3 {
+            color: #ffffff;
+        }
 
-/* ================= FOOTER ================= */
-footer {
-    background-color: #2f3240;
-    color: #ffffff;
-    padding: 45px 60px;
-}
+        .card:hover img {
+            filter: brightness(0) invert(1);
+        }
+        a{
+            text-decoration: none;
+        }
 
-.footer-container {
-    max-width: 1400px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-}
+        /* ================= FOOTER ================= */
+        footer {
+            background-color: #2f3240;
+            color: #ffffff;
+            padding: 45px 60px;
+        }
 
-.footer-section {
-    min-width: 240px;
-}
+        .footer-container {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
 
-.footer-section a {
-    color: #ffffff;
-    text-decoration: none;
-    display: block;
-    margin-top: 10px;
-}
+        .footer-section {
+            min-width: 240px;
+        }
 
-.footer-section a:hover {
-    opacity: 0.8;
-}
-</style>
+        .footer-section a {
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .footer-section a:hover {
+            opacity: 0.8;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header class="site-header">
-    <div class="navbar">
-        <div class="logo">PlaySpot</div>
+    <!-- NAVBAR -->
+    <header class="site-header">
+        <div class="navbar">
+            <a href="./Homepage.html">
+                <div class="logo">PlaySpot</div>
+            </a>
 
-        <div class="bookings">
-            <a href="#">Find a Field</a>
-            <a href="#">My Bookings</a>
-            <a href="#">For Owners</a>
-        </div>
-
-        <div class="nav-links">
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
-        </div>
-    </div>
-</header>
-
-<!-- MAIN -->
-<div class="main">
-    <div class="main-header">Sign Up</div>
-
-    <div class="content">
-        <h2>Welcome! How do you want to join?</h2>
-
-        <div class="cards">
-            <div class="card">
-                <img src="https://cdn-icons-png.flaticon.com/128/456/456283.png">
-                <h3>Player</h3>
+            <div class="bookings">
+                <a href="#">Find a Field</a>
+                <a href="#">My Bookings</a>
+                <a href="#">For Owners</a>
             </div>
 
-            <div class="card">
+            <div class="nav-links">
+                <a href="./loginn.html">Login</a>
+                <a href="./Signup.html">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <div class="main">
+        <div class="main-header">Sign Up</div>
+
+        <div class="content">
+            <h2>Welcome! How do you want to join?</h2>
+
+            <a href="./signupPlayer.html">
+                <div class="cards">
+                    <div class="card">
+                        <img src="https://cdn-icons-png.flaticon.com/128/456/456283.png">
+                        <h3>Player</h3>
+                    </div>
+            </a>
+           <a href="./SignupOwner.html">
+             <div class="card">
                 <img src="https://cdn-icons-png.flaticon.com/128/456/456283.png">
                 <h3>Ground Owner</h3>
             </div>
+            </a>
         </div>
     </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-section">
-            <div class="logo">PlaySpot</div>
-            <p>© 2025–26 PlaySpot. All rights reserved.</p>
-        </div>
-
-        <div class="footer-section">
-            <p><strong>Contact Us</strong></p>
-            <p>AIR UNIVERSITY</p>
-            <p>+92 346 5535959</p>
-            <p>abbassalman234@gmail.com</p>
-        </div>
-
-        <div class="footer-section">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-        </div>
     </div>
-</footer>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="logo">PlaySpot</div>
+                <p>© 2025–26 PlaySpot. All rights reserved.</p>
+            </div>
+
+            <div class="footer-section">
+                <p><strong>Contact Us</strong></p>
+                <p>AIR UNIVERSITY</p>
+                <p>+92 346 5535959</p>
+                <p>abbassalman234@gmail.com</p>
+            </div>
+
+            <div class="footer-section">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
+
 </html>
