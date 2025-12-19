@@ -1,325 +1,238 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>PlaySpot - Find a Field</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>PlaySpot – Find a Field</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            background: #f2f4f7;
-        }
+  <style>
+    body{
+      margin:0;
+      font-family:Arial;
+      background:#f2f4f7;
+    }
 
-        /* NAVBAR */
+    /* NAVBAR */
+    header{
+      background:#fff;
+      position:fixed;
+      top:0;left:0;
+      width:100%;
+      z-index:100;
+    }
+    .navbar{
+      padding:20px 5%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo{
+      font-size:1.8em;
+      font-weight:700;
+      color:#002d5c;
+    }
+    .navbar a{text-decoration:none}
+    .bookings a,
+    .nav-links a{
+      color:#002d5c;
+      margin-left:25px;
+      font-weight:500;
+    }
+    .bookings a:hover,
+    .nav-links a:hover{
+      color:#007bff;
+    }
 
-        header {
-            background-color: #ffffff;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-        }
+    /* HERO */
+    .hero{
+      margin-top:90px;
+      background:#0b3c6d;
+      color:white;
+      padding:70px 40px;
+    }
 
-        .navbar {
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    /* SEARCH */
+    .search{
+      background:white;
+      padding:20px 40px;
+      display:flex;
+      gap:10px;
+    }
+    .search input{
+      flex:1;
+      padding:10px;
+    }
+    .search button{
+      padding:10px 20px;
+      background:#0b3c6d;
+      color:white;
+      border:none;
+      cursor:pointer;
+    }
 
-        .navbar a {
-            text-decoration: none;
-        }
+    /* MAIN */
+    .main{
+      display:flex;
+      padding:30px 40px;
+      gap:20px;
+      flex-wrap:wrap;
+    }
 
-        .logo {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: #002d5c;
+    /* FILTERS */
+    .filters{
+      width:220px;
+      background:white;
+      padding:20px;
+      height:fit-content;
+    }
 
-        }
+    /* CARDS */
+    .card{
+      width:260px;
+      background:white;
+      border-radius:6px;
+      overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,.1);
+    }
+    .card img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+    }
+    .card-content{
+      padding:15px;
+    }
+    .price{
+      color:green;
+      font-weight:bold;
+    }
 
-        .bookings a {
-            color: #002d5c;
-            padding-left: 30px;
-            text-decoration: none;
-            font-weight: 500;
-        }
+    /* FOOTER */
+    .footer{
+      background:#0b1d3a;
+      color:white;
+      padding:35px 60px;
+      margin-top:40px;
+    }
+    .footer-container{
+      max-width:1400px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:40px;
+    }
+    .footer-box p{margin:5px 0}
 
-        .bookings a:hover {
-            color: #007bff;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #002d5c;
-            margin-left: 25px;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            border-bottom: 3px solid #002d5c;
-            padding-bottom: 4px;
-        }
-
-        /* HERO */
-        .hero {
-            background: #0b3c6d;
-            color: white;
-            padding: 75px 40px;
-        }
-
-        /* SEARCH */
-        .search {
-            background: white;
-            padding: 20px 40px;
-        }
-
-        .search input {
-            width: 70%;
-            padding: 10px;
-        }
-
-        .search button {
-            padding: 10px 20px;
-            background: #0b3c6d;
-            color: white;
-            border: none;
-        }
-
-        /* MAIN */
-        .main {
-            display: flex;
-            padding: 30px 40px;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .filters {
-            width: 220px;
-            background: white;
-            padding: 20px;
-            margin-right: 20px;
-        }
-
-        .card {
-            width: 260px;
-            background: white;
-            margin-right: 20px;
-            flex: 0 0 260px;
-            /* keep a fixed card width on wider screens */
-        }
-
-        .card img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-        }
-
-        /* Responsive breakpoints */
-        @media (max-width: 900px) {
-            .main {
-                padding: 20px;
-                flex-direction: column;
-                /* stack filters and cards */
-            }
-
-            .filters {
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 16px;
-                order: -1;
-                /* place filters above cards */
-            }
-
-            .card {
-                width: 100%;
-                max-width: 100%;
-                margin-right: 0;
-                flex: 1 1 100%;
-            }
-
-            .card img {
-                height: 200px;
-            }
-
-            .search input {
-                width: 100%;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-            }
-
-            .navbar span {
-                float: none;
-                display: block;
-                margin-top: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 24px 16px;
-            }
-
-            .card img {
-                height: 160px;
-            }
-
-            .filters {
-                padding: 12px;
-            }
-
-            .footer {
-                padding: 28px 20px;
-            }
-        }
-
-        .card-content {
-            padding: 15px;
-        }
-
-        .price {
-            color: green;
-            font-weight: bold;
-        }
-
-        /* ===== FOOTER (DARK BLUE) ===== */
-        .footer {
-            background-color: #0b1d3a;
-            color: #ffffff;
-            padding: 35px 60px;
-            margin-top: 40px;
-        }
-
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .footer-box h3 {
-            margin-bottom: 10px;
-        }
-
-        .footer-box p {
-            margin: 4px 0;
-            opacity: 0.9;
-        }
-    </style>
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .main{flex-direction:column}
+      .filters{width:100%}
+      .card{width:100%}
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <header>
-        <div class="navbar">
-            <a href="./Homepage.html">
-                <div class="logo">PlaySpot</div>
-            </a>
-            <div class="bookings">
-                <a href="./findfield.html">Find a Field</a>
-                <a href="./mybookings.html">My Bookings</a>
-                <a href="#">For Owners</a>
-            </div>
-            <div class="nav-links">
-                <a href="./loginn.html">Login</a>
-                <a href="./Signup.html">Sign Up</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- HERO -->
-    <div class="hero">
-        <h1>Find a Sports Field</h1>
-        <p>Book Cricket & Padel courts across Pakistan</p>
+<!-- NAVBAR -->
+<header>
+  <div class="navbar">
+    <a href="./Homepage.html"><div class="logo">PlaySpot</div></a>
+    <div class="bookings">
+      <a href="./findfield.html">Find a Field</a>
+      <a href="./mybookings.html">My Bookings</a>
+      <a href="#">For Owners</a>
     </div>
-
-    <!-- SEARCH -->
-    <div class="search">
-        <input type="text" placeholder="Search by city or name">
-        <button>Search</button>
+    <div class="nav-links">
+      <a href="./loginn.html">Login</a>
+      <a href="./Signup.html">Sign Up</a>
     </div>
+  </div>
+</header>
 
-    <!-- MAIN -->
-    <div class="main">
+<!-- HERO -->
+<div class="hero">
+  <h1>Find a Sports Field</h1>
+  <p>Book Cricket & Padel courts across Pakistan</p>
+</div>
 
-        <!-- FILTERS -->
-        <div class="filters">
-            <h3>Filters</h3>
+<!-- SEARCH -->
+<div class="search">
+  <input type="text" placeholder="Search by city or name">
+  <button>Search</button>
+</div>
 
-            <b>Sport</b><br>
-            <label><input type="radio" name="sport"> Cricket</label><br>
-            <label><input type="radio" name="sport"> Padel</label><br><br>
+<!-- MAIN -->
+<div class="main">
 
-            <b>Amenities</b><br>
-            <label><input type="checkbox"> Parking</label><br>
-            <label><input type="checkbox"> Floodlights</label><br>
-            <label><input type="checkbox"> Cafe</label>
-        </div>
+  <!-- FILTERS -->
+  <div class="filters">
+    <h3>Filters</h3><br>
+    <b>Sport</b><br>
+    <label><input type="radio" name="sport"> Cricket</label><br>
+    <label><input type="radio" name="sport"> Padel</label><br><br>
 
-        <!-- CARD 1 -->
-        <div class="card">
-            <img src="ayub-padel.jpg.jpeg" alt="Ayub Park Padel Court" loading="lazy">
-            <div class="card-content">
-                <h4>Ayub Park Padel Court</h4>
-                <p>Sport: Padel</p>
-                <p>Amenities: Parking, Cafe</p>
-                <p class="price">PKR 1500 / hour</p>
-            </div>
-        </div>
+    <b>Amenities</b><br>
+    <label><input type="checkbox"> Parking</label><br>
+    <label><input type="checkbox"> Floodlights</label><br>
+    <label><input type="checkbox"> Cafe</label>
+  </div>
 
-        <!-- CARD 2 -->
-        <div class="card">
-            <img src="isb-padel.jpg.jpeg" alt="Islamabad Padel Court" loading="lazy">
-            <div class="card-content">
-                <h4>Islamabad Padel Court</h4>
-                <p>Sport: Padel</p>
-                <p>Amenities: Parking, Floodlights</p>
-                <p class="price">PKR 1500 / hour</p>
-            </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="card">
-            <img src="cricket-stadium.jpg.jpg" alt="Cricket Stadium Pakistan" loading="lazy">
-            <div class="card-content">
-                <h4>Cricket Stadium Pakistan</h4>
-                <p>Sport: Cricket</p>
-                <p>Amenities: Parking, Floodlights</p>
-                <p class="price">PKR 2000 / hour</p>
-            </div>
-        </div>
-
+  <!-- CARD 1 -->
+  <div class="card">
+    <img src="https://www.dugoutchennai.com/wp-content/uploads/2022/12/image_cricket-2.jpg">
+    <div class="card-content">
+      <h4>Elite Cricket Arena</h4>
+      <p>Sport: Cricket</p>
+      <p>Amenities: Parking, Floodlights</p>
+      <p class="price">PKR 2000 / hour</p>
     </div>
+  </div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-        <div class="footer-container">
-
-            <div class="footer-box">
-                <h3>PlaySpot</h3>
-                <p>© 2025–26 PlaySpot. All rights reserved.</p>
-            </div>
-
-            <div class="footer-box">
-                <h3>Contact Us</h3>
-                <p>AIR UNIVERSITY</p>
-                <p>+92 346 5535959</p>
-                <p>abbassalman234@gmail.com</p>
-            </div>
-
-            <div class="footer-box">
-                <p>Privacy Policy</p>
-                <p>Terms and Conditions</p>
-            </div>
-
-        </div>
+  <!-- CARD 2 -->
+  <div class="card">
+    <img src="http://mypadellife.com/cdn/shop/articles/Action_in_plays.jpg?v=1714043048">
+    <div class="card-content">
+      <h4>Islamabad Padel Court</h4>
+      <p>Sport: Padel</p>
+      <p>Amenities: Parking, Cafe</p>
+      <p class="price">PKR 1500 / hour</p>
     </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="card">
+    <img src="https://image.made-in-china.com/2f0j00PLGbABvtZipn/Factory-Wholesale-Custom-Panoramic-Paddle-Tennis-Indoor-Outdoor-Paddle-Court.jpg">
+    <div class="card-content">
+      <h4>Ayub Park Padel Court</h4>
+      <p>Sport: Padel</p>
+      <p>Amenities: Parking, Cafe</p>
+      <p class="price">PKR 1500 / hour</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-container">
+    <div class="footer-box">
+      <h3>PlaySpot</h3>
+      <p>© 2025–26 PlaySpot. All rights reserved.</p>
+    </div>
+    <div class="footer-box">
+      <h3>Contact Us</h3>
+      <p>AIR UNIVERSITY</p>
+      <p>+92 346 5535959</p>
+      <p>abbassalman234@gmail.com</p>
+    </div>
+    <div class="footer-box">
+      <p>Privacy Policy</p>
+      <p>Terms and Conditions</p>
+    </div>
+  </div>
+</div>
 
 </body>
-
 </html>
