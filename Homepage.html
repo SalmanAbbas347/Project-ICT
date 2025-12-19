@@ -117,8 +117,8 @@
       background: #f0a936f5;
       color: #ffffff;
       border: none;
-      padding: 0 25px;
-      font-size: 17px;
+      padding: 9px 25px;
+      font-size: 24px;
       cursor: pointer;
     }
     .search-box button:hover{
@@ -149,15 +149,19 @@
       gap: 25px;
       max-width: 1100px;
       margin: auto;
+      
     }
-
     .card {
       background: #fafafa;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box shadow 0.3s ease;
     }
-
+.card:hover{
+      transform: translateY(-5px);
+      box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+    }
     .card img {
       width: 100%;
       height: 180px;
@@ -176,7 +180,10 @@
       color: #c58b2b;
       font-size: 14px;
     }
-
+   a{
+    text-decoration: none;
+    
+   }
     /* ================= FOOTER ================= */
     footer {
       background-color: #2f3240;
@@ -251,16 +258,20 @@
 
       <div class="search-box">
         <input type="text" placeholder="Search: Cricket pitch near me" />
-        <button>Search</button>
+       <a href="./findfield.html">
+         <button>Search</button>
+         </a>
       </div>
     </div>
   </section>
 
   <!-- FEATURED -->
+ 
   <section class="featured">
     <h2>Featured Venues</h2>
     <p>Browse some of the top-rated fields available for booking</p>
 
+    <a href="./findfield.html">
     <div class="cards">
       <div class="card">
         <img src="https://www.dugoutchennai.com/wp-content/uploads/2022/12/image_cricket-2.jpg" alt="Cricket Ground">
@@ -269,22 +280,28 @@
           <span>⭐ 4.8 Rating</span>
         </div>
       </div>
+      </a>
 
+      <a href="./findfield.html">
       <div class="card">
         <img src="http://mypadellife.com/cdn/shop/articles/Action_in_plays.jpg?v=1714043048" alt="Padel Court">
         <div class="content">
-          <h3>Urban Padel Club</h3>
+          <h3>Islamabad Padel Court</h3>
           <span>⭐ 4.7 Rating</span>
         </div>
       </div>
+       </a>
+      
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0" alt="Sports Field">
+       <a href="./findfield.html">
+        <div class="card">
+        <img src="https://image.made-in-china.com/2f0j00PLGbABvtZipn/Factory-Wholesale-Custom-Panoramic-Paddle-Tennis-Indoor-Outdoor-Paddle-Court.jpg" alt="Sports Field">
         <div class="content">
-          <h3>City Sports Complex</h3>
+          <h3>Ayub Park padel court</h3>
           <span>⭐ 4.6 Rating</span>
-        </div>
+        </div>  
       </div>
+      </a>
     </div>
   </section>
 
