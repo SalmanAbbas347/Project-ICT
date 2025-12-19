@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,302 +8,316 @@
 </head>
 <style>
     .header {
-    position: fixed;     
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #9966CC;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5),  rgba(0, 0, 0, 0.5) ), url("https://www.boxcrick.com/static/img/home-6.avif");
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-}
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #9966CC;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://www.boxcrick.com/static/img/home-6.avif");
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+    }
 
 
 
 
-.navbar {
-    background-color: white;
-    padding: 20px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Roboto', Arial, sans-serif;
-}
-.navbar a{
-    text-decoration: none;
-}
-.logo {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: #002d5c;
-}
+    .navbar {
+        background-color: white;
+        padding: 20px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Roboto', Arial, sans-serif;
+    }
 
-.bookings a {
-    color: #002d5c;
-    padding-left: 30px;
-    text-decoration: none;
-}
-.bookings a:hover{
-    color:#007bff;
-}
+    .navbar a {
+        text-decoration: none;
+    }
 
-.nav-links a {
-    text-decoration: none;
-    color: #002d5c;
-    margin-left: 25px;
-    font-weight: 500;
-    
-}
-.nav-links a:hover{
-    border-bottom: 3px solid #002d5c;
-    padding-bottom: 4px;
-    
-}
-.main-content {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 130px 20px;
-        }
+    .logo {
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #002d5c;
+    }
 
-        /* --- 3. Login Card Layout (The White Box) --- */
-        .login-card {
-            background-color: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 680px;
-            display: flex;
-            overflow: hidden; 
-            padding-left: 0px;
-        }
+    .bookings a {
+        color: #002d5c;
+        padding-left: 30px;
+        text-decoration: none;
+    }
 
-        /* Right Side: Login Title and Form */
-        .login-details {
-            padding: 40px;
-            flex: 1; 
-        }
+    .bookings a:hover {
+        color: #007bff;
+    }
 
-        /* Login Strip: Now covers the full width of the form side */
-        .login-header {
-            background-color: #002d5c; /* Dark Blue */
-            color: white;
-            padding: 15px 40px;
-            margin: -40px; /* Pulls the header to the edge of the card (top, right, bottom margins are negative 40px) */
-            margin-bottom: 40px;
-            font-size: 1.8em;
-            font-weight: 500;
-            border-top-left-radius: 0px; /* Match card radius for the top left corner */
-        }
+    .nav-links a {
+        text-decoration: none;
+        color: #002d5c;
+        margin-left: 25px;
+        font-weight: 500;
 
-        /* Left Side: Pitch Photo Area */
-        .illustration-area {
-          width: 50%;
-            background: url("https://img.freepik.com/free-photo/view-soccer-field-with-grass_23-2150887297.jpg?semt=ais_hybrid&w=740&q=80");
-            background-size: cover;
-        }
-        
-        /* Styling for the pitch image */
-        .illustration-area img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px; 
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
+    }
 
-        /* --- 4. Form Styling (Flexbox Usage) --- */
-        .login-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px; 
-            width: 100%;
-            max-width: 350px; 
-            margin: 0 auto; 
-            margin-top: 50px; /* Added margin to push fields down */
-        }
+    .nav-links a:hover {
+        border-bottom: 3px solid #002d5c;
+        padding-bottom: 4px;
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        /* Input Fields */
-        .form-group input[type="text"], 
-        .form-group input[type="password"] {
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1em;
-            margin-top: 5px; 
-        }
-        
-        .form-group input:focus {
-            border-color: #007bff;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
-        }
+    }
 
-        /* Remember Me / Forgot Password Layout */
-        .options-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9em;
-            color: #555;
-            margin-top: -10px; 
-        }
+    .main-content {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 130px 20px;
+    }
 
-        .remember-me {
-            display: flex;
-            align-items: center;
-        }
+    /* --- 3. Login Card Layout (The White Box) --- */
+    .login-card {
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 680px;
+        display: flex;
+        overflow: hidden;
+        padding-left: 0px;
+    }
 
-        .remember-me input {
-            margin-right: 5px;
-        }
+    /* Right Side: Login Title and Form */
+    .login-details {
+        padding: 40px;
+        flex: 1;
+    }
 
-        .forgot-password a {
-            color: #007bff;
-            text-decoration: none;
-        }
+    /* Login Strip: Now covers the full width of the form side */
+    .login-header {
+        background-color: #002d5c;
+        /* Dark Blue */
+        color: white;
+        padding: 15px 40px;
+        margin: -40px;
+        /* Pulls the header to the edge of the card (top, right, bottom margins are negative 40px) */
+        margin-bottom: 40px;
+        font-size: 1.8em;
+        font-weight: 500;
+        border-top-left-radius: 0px;
+        /* Match card radius for the top left corner */
+    }
 
-        /* Login Button */
-        .login-button {
-            padding: 12px 25px;
-            background-color: #007bffa7; 
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 1.1em;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    /* Left Side: Pitch Photo Area */
+    .illustration-area {
+        width: 50%;
+        background: url("https://img.freepik.com/free-photo/view-soccer-field-with-grass_23-2150887297.jpg?semt=ais_hybrid&w=740&q=80");
+        background-size: cover;
+    }
 
-        .login-button:hover {
-            background-color: #0056b3;
-        }
+    /* Styling for the pitch image */
+    .illustration-area img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
 
-        
-        .signup-link {
-            text-align: center;
-            font-size: 0.9em;
-            margin-top: 10px;
-        }
+    /* --- 4. Form Styling (Flexbox Usage) --- */
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        margin-top: 50px;
+        /* Added margin to push fields down */
+    }
 
-        .signup-link a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        footer {
-      background-color: #2f3240;
-      color: #ffffff;
-      padding: 45px 60px;
-      font-family: 'Roboto', Arial, sans-serif;
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Input Fields */
+    .form-group input[type="text"],
+    .form-group input[type="password"] {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1em;
+        margin-top: 5px;
+    }
+
+    .form-group input:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    }
+
+    /* Remember Me / Forgot Password Layout */
+    .options-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9em;
+        color: #555;
+        margin-top: -10px;
+    }
+
+    .remember-me {
+        display: flex;
+        align-items: center;
+    }
+
+    .remember-me input {
+        margin-right: 5px;
+    }
+
+    .forgot-password a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    /* Login Button */
+    .login-button {
+        padding: 12px 25px;
+        background-color: #007bffa7;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1.1em;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .login-button:hover {
+        background-color: #0056b3;
+    }
+
+
+    .signup-link {
+        text-align: center;
+        font-size: 0.9em;
+        margin-top: 10px;
+    }
+
+    .signup-link a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    footer {
+        background-color: #2f3240;
+        color: #ffffff;
+        padding: 45px 60px;
+        font-family: 'Roboto', Arial, sans-serif;
     }
 
     .footer-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 40px;
-      flex-wrap: wrap; 
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        flex-wrap: wrap;
     }
 
     .footer-section {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      min-width: 240px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        min-width: 240px;
     }
 
     /* LEFT */
     .footer-left .logo {
-      font-size: 26px;
-      font-weight: bold;
-      color:#ffffff
+        font-size: 26px;
+        font-weight: bold;
+        color: #ffffff
     }
 
     .footer-left .tagline {
-      opacity: 0.8;
+        opacity: 0.8;
     }
 
     .footer-left .copyright {
-      margin-top: 6px;
-      font-size: 14px;
-      opacity: 0.7;
+        margin-top: 6px;
+        font-size: 14px;
+        opacity: 0.7;
     }
 
     /* CENTER (Contact) */
     .footer-center {
-      text-align: left;
+        text-align: left;
     }
 
     .footer-center p {
-      margin: 0;
-      font-size: 16px;
-      opacity: 0.9;
+        margin: 0;
+        font-size: 16px;
+        opacity: 0.9;
     }
 
     /* RIGHT */
     .footer-right {
-      text-align: left;
+        text-align: left;
     }
 
     .footer-right a {
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 16px;
-      opacity: 0.9;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        opacity: 0.9;
     }
 
     .footer-right a:hover {
-      opacity: 1;
+        opacity: 1;
     }
 
 
-      .footer-right {
+    .footer-right {
         text-align: left;
-      }
-        </style>
-<body> 
+    }
+</style>
+
+<body>
     <header class="header">
         <div class="navbar">
-       <a href="./Homepage.html">
-         <div class="logo">PlaySpot</div>
-        </a>
-        <div class="bookings"> <a href="./findfield.html">Find a Field</a>
-          <a href="./mybookings.html">My Bookings</a>
-           <a href="#">For Owners</a></div>
-        <div class="nav-links">
-            <a href="./loginn.html">Login</a>
-            <a href="./Signup.html">Sign Up</a>
+            <a href="./Homepage.html">
+                <div class="logo">PlaySpot</div>
+            </a>
+            <div class="bookings"> <a href="./findfield.html">Find a Field</a>
+                <a href="./mybookings.html">My Bookings</a>
+                <a href="#">For Owners</a>
+            </div>
+            <div class="nav-links">
+                <a href="./loginn.html">Login</a>
+                <a href="./Signup.html">Sign Up</a>
+            </div>
         </div>
-    </div>
     </header>
     <div class="main-content">
         <div class="login-card">
-            
+
             <div class="illustration-area">
-                
-                <img src="https://img.freepik.com/free-photo/view-soccer-field-with-grass_23-2150887297.jpg?semt=ais_hybrid&w=740&q=80" alt="Indoor Box Cricket Pitch">
+
+                <img src="https://img.freepik.com/free-photo/view-soccer-field-with-grass_23-2150887297.jpg?semt=ais_hybrid&w=740&q=80"
+                    alt="Indoor Box Cricket Pitch">
             </div>
 
             <div class="login-details">
                 <div class="login-header">Login</div>
 
                 <form class="login-form" action="./Homepage.html">
-                    
+
                     <div class="form-group">
                         <input type="text" id="email" name="email" required placeholder="Email or Username">
                     </div>
@@ -322,44 +337,45 @@ body {
                     </div>
 
                     <button type="submit" class="login-button">LOG IN</button>
-                    
+
                     <div class="signup-link">
                         Don't have an account? <a href="./Signup.html">Create an Account</a>
                     </div>
 
                 </form>
             </div>
-            
+
         </div>
     </div>
 
 
-<!-- =============FOOTER SECTION============== -->
-   <footer>
-  <div class="footer-container">
+    <!-- =============FOOTER SECTION============== -->
+    <footer>
+        <div class="footer-container">
 
 
-    <div class="footer-section footer-left">
-      <div class="logo">PlaySpot</div>
-      <div class="tagline"></div>
-      <div class="copyright">© 2025–26 PlaySpot. All rights reserved.</div>
-    </div>
+            <div class="footer-section footer-left">
+                <div class="logo">PlaySpot</div>
+                <div class="tagline"></div>
+                <div class="copyright">© 2025–26 PlaySpot. All rights reserved.</div>
+            </div>
 
-    
-    <div class="footer-section footer-center">
-      <p style="font-weight: bold; font-size: 23px;">Contact Us</p>
-      <p>AIR UNIVERSITY</p>
-      <p>+92 346 5535959</p>
-      <p>abbassalman234@gmail.com</p>
-    </div>
 
-    
-    <div class="footer-section footer-right">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms and Conditions</a>
-    </div>
+            <div class="footer-section footer-center">
+                <p style="font-weight: bold; font-size: 23px;">Contact Us</p>
+                <p>AIR UNIVERSITY</p>
+                <p>+92 346 5535959</p>
+                <p>abbassalman234@gmail.com</p>
+            </div>
 
-  </div>
-</footer>
+
+            <div class="footer-section footer-right">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms and Conditions</a>
+            </div>
+
+        </div>
+    </footer>
 </body>
+
 </html>

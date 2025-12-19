@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +16,7 @@
 
     body {
       height: 81vh;
-      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url("https://www.boxcrick.com/static/img/home-6.avif");
       background-size: cover;
       background-position: center;
@@ -24,19 +25,21 @@
 
     /* ================= NAVBAR ================= */
     header {
-     background-color: #ffffff;
-    position: fixed;     
-    top: 0;
-    left: 0;
-    width: 100%;
+      background-color: #ffffff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
     }
-  .navbar {
+
+    .navbar {
       padding: 20px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .navbar a{
+
+    .navbar a {
       text-decoration: none;
     }
 
@@ -44,7 +47,7 @@
       font-size: 1.8em;
       font-weight: 700;
       color: #002d5c;
-    
+
     }
 
     .bookings a {
@@ -121,8 +124,9 @@
       font-size: 24px;
       cursor: pointer;
     }
-    .search-box button:hover{
-      background:#ec9407e2 ;
+
+    .search-box button:hover {
+      background: #ec9407e2;
     }
 
     /* ================= FEATURED ================= */
@@ -149,19 +153,22 @@
       gap: 25px;
       max-width: 1100px;
       margin: auto;
-      
+
     }
+
     .card {
       background: #fafafa;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box shadow 0.3s ease;
     }
-.card:hover{
+
+    .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     }
+
     .card img {
       width: 100%;
       height: 180px;
@@ -180,10 +187,12 @@
       color: #c58b2b;
       font-size: 14px;
     }
-   a{
-    text-decoration: none;
-    
-   }
+
+    a {
+      text-decoration: none;
+
+    }
+
     /* ================= FOOTER ================= */
     footer {
       background-color: #2f3240;
@@ -230,6 +239,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- NAVBAR -->
@@ -258,31 +268,31 @@
 
       <div class="search-box">
         <input type="text" placeholder="Search: Cricket pitch near me" />
-       <a href="./findfield.html">
-         <button>Search</button>
-         </a>
+        <a href="./findfield.html">
+          <button>Search</button>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- FEATURED -->
- 
+
   <section class="featured">
     <h2>Featured Venues</h2>
     <p>Browse some of the top-rated fields available for booking</p>
 
     <a href="./findfield.html">
-    <div class="cards">
-      <div class="card">
-        <img src="https://www.dugoutchennai.com/wp-content/uploads/2022/12/image_cricket-2.jpg" alt="Cricket Ground">
-        <div class="content">
-          <h3>Elite Cricket Arena</h3>
-          <span>⭐ 4.8 Rating</span>
+      <div class="cards">
+        <div class="card">
+          <img src="https://www.dugoutchennai.com/wp-content/uploads/2022/12/image_cricket-2.jpg" alt="Cricket Ground">
+          <div class="content">
+            <h3>Elite Cricket Arena</h3>
+            <span>⭐ 4.8 Rating</span>
+          </div>
         </div>
-      </div>
-      </a>
+    </a>
 
-      <a href="./findfield.html">
+    <a href="./findfield.html">
       <div class="card">
         <img src="http://mypadellife.com/cdn/shop/articles/Action_in_plays.jpg?v=1714043048" alt="Padel Court">
         <div class="content">
@@ -290,18 +300,20 @@
           <span>⭐ 4.7 Rating</span>
         </div>
       </div>
-       </a>
-      
+    </a>
 
-       <a href="./findfield.html">
-        <div class="card">
-        <img src="https://image.made-in-china.com/2f0j00PLGbABvtZipn/Factory-Wholesale-Custom-Panoramic-Paddle-Tennis-Indoor-Outdoor-Paddle-Court.jpg" alt="Sports Field">
+
+    <a href="./findfield.html">
+      <div class="card">
+        <img
+          src="https://image.made-in-china.com/2f0j00PLGbABvtZipn/Factory-Wholesale-Custom-Panoramic-Paddle-Tennis-Indoor-Outdoor-Paddle-Court.jpg"
+          alt="Sports Field">
         <div class="content">
           <h3>Ayub Park padel court</h3>
           <span>⭐ 4.6 Rating</span>
-        </div>  
+        </div>
       </div>
-      </a>
+    </a>
     </div>
   </section>
 
@@ -328,8 +340,5 @@
   </footer>
 
 </body>
+
 </html>
-
-
-
-

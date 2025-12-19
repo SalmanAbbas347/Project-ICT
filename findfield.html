@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>PlaySpot - Find a Field</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,53 +13,56 @@
         }
 
         /* NAVBAR */
-       
- header {
-     background-color: #ffffff;
-    position: fixed;     
-    top: 0;
-    left: 0;
-    width: 100%;
-    }
-  .navbar {
-      padding: 20px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .navbar a{
-      text-decoration: none;
-    }
 
-    .logo {
-      font-size: 1.8em;
-      font-weight: 700;
-      color: #002d5c;
-    
-    }
+        header {
+            background-color: #ffffff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
 
-    .bookings a {
-      color: #002d5c;
-      padding-left: 30px;
-      text-decoration: none;
-      font-weight: 500;
-    }
+        .navbar {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .bookings a:hover {
-      color: #007bff;
-    }
+        .navbar a {
+            text-decoration: none;
+        }
 
-    .nav-links a {
-      text-decoration: none;
-      color: #002d5c;
-      margin-left: 25px;
-      font-weight: 500;
-    }
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #002d5c;
 
-    .nav-links a:hover {
-      border-bottom: 3px solid #002d5c;
-      padding-bottom: 4px;
-    }
+        }
+
+        .bookings a {
+            color: #002d5c;
+            padding-left: 30px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .bookings a:hover {
+            color: #007bff;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #002d5c;
+            margin-left: 25px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            border-bottom: 3px solid #002d5c;
+            padding-bottom: 4px;
+        }
+
         /* HERO */
         .hero {
             background: #0b3c6d;
@@ -103,7 +107,8 @@
             width: 260px;
             background: white;
             margin-right: 20px;
-            flex: 0 0 260px; /* keep a fixed card width on wider screens */
+            flex: 0 0 260px;
+            /* keep a fixed card width on wider screens */
         }
 
         .card img {
@@ -116,14 +121,16 @@
         @media (max-width: 900px) {
             .main {
                 padding: 20px;
-                flex-direction: column; /* stack filters and cards */
+                flex-direction: column;
+                /* stack filters and cards */
             }
 
             .filters {
                 width: 100%;
                 margin-right: 0;
                 margin-bottom: 16px;
-                order: -1; /* place filters above cards */
+                order: -1;
+                /* place filters above cards */
             }
 
             .card {
@@ -209,21 +216,21 @@
 
     <!-- NAVBAR -->
     <header>
-    <div class="navbar">
-      <a href="./Homepage.html">
-        <div class="logo">PlaySpot</div>
-      </a>
-      <div class="bookings">
-        <a href="./findfield.html">Find a Field</a>
-        <a href="./mybookings.html">My Bookings</a>
-        <a href="#">For Owners</a>
-      </div>
-      <div class="nav-links">
-        <a href="./loginn.html">Login</a>
-        <a href="./Signup.html">Sign Up</a>
-      </div>
-    </div>
-  </header>
+        <div class="navbar">
+            <a href="./Homepage.html">
+                <div class="logo">PlaySpot</div>
+            </a>
+            <div class="bookings">
+                <a href="./findfield.html">Find a Field</a>
+                <a href="./mybookings.html">My Bookings</a>
+                <a href="#">For Owners</a>
+            </div>
+            <div class="nav-links">
+                <a href="./loginn.html">Login</a>
+                <a href="./Signup.html">Sign Up</a>
+            </div>
+        </div>
+    </header>
 
     <!-- HERO -->
     <div class="hero">
@@ -314,4 +321,5 @@
     </div>
 
 </body>
+
 </html>

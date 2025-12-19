@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>PlaySpot | My Bookings</title>
+    <meta charset="UTF-8">
+    <title>PlaySpot | My Bookings</title>
 
-<style>
-body{
-    font-family: Arial, sans-serif;
-    background:#f5f5f5;
-    margin:0;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-/* Header */
-.site-header {
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== HEADER ===== */
+        .site-header {
             position: fixed;
             top: 0;
             left: 0;
@@ -41,7 +53,6 @@ body{
         .bookings a,
         .nav-links a {
             color: white;
-            text-decoration: none;
             margin-left: 25px;
             font-weight: 500;
         }
@@ -50,177 +61,270 @@ body{
         .nav-links a:hover {
             color: #007bff;
         }
-/* Container */
-.container{
-    width:70%;
-    margin:50px auto;
-    margin-top: 80px;
-}
 
-/* Booking Card */
-.booking{
-    background:white;
-    padding:59px;
-    margin-bottom:20px;
-    border-radius:10px;
-    border:1px solid #ddd;
-}
+        /* ===== MAIN CONTENT ===== */
+        .main-content {
+            flex: 1;
+            padding-top: 85px;
+        }
 
-.booking h2{
-    margin:0;
-}
+        .container {
+            width: 70%;
+            margin: auto;
+        }
 
-.info{
-    color:gray;
-    margin:8px 0;
-}
+        /* ===== BOOKING CARD ===== */
+        .booking {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
 
-.buttons{
-    margin-top:10px;
-}
+        .booking-image img {
+            width: 250px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
 
-.confirmed{
-    background:green;
-    color:white;
-    padding:6px 12px;
-    border:none;
-    border-radius:4px;
-}
+        .booking-details {
+            flex: 1;
+        }
 
-.cancel{
-    background:red;
-    color:white;
-    padding:6px 12px;
-    border:none;
-    border-radius:4px;
-    margin-left:10px;
-}
+        .booking-details h2 {
+            margin-top: 0;
+        }
 
-/* ===== FOOTER (DARK BLUE) ===== */
-.footer {
-    background-color: #0b1d3a; /* dark blue */
-    color: #ffffff;
-    padding: 45px 60px;
-}
+        .info {
+            color: gray;
+            margin: 6px 0;
+        }
 
-.footer-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-}
+        .buttons {
+            margin-top: 12px;
+        }
 
-.footer-box h3 {
-    margin-bottom: 10px;
-}
+        .confirmed {
+            background: green;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+        }
 
-.footer-box p {
-    margin: 4px 0;
-    opacity: 0.9;
-}
-</style>
+        .cancel {
+            background: red;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #2f3240;
+            color: #ffffff;
+            padding: 45px 60px;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            min-width: 240px;
+        }
+
+        /* LEFT */
+        .footer-left .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #ffffff
+        }
+
+        .footer-left .tagline {
+            opacity: 0.8;
+        }
+
+        .footer-left .copyright {
+            margin-top: 6px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* CENTER (Contact) */
+        .footer-center {
+            text-align: left;
+        }
+
+        .footer-center p {
+            margin: 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* RIGHT */
+        .footer-right {
+            text-align: left;
+        }
+
+        .footer-right a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .footer-right a:hover {
+            opacity: 1;
+        }
+
+
+        .footer-right {
+            text-align: left;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- Header -->
-<header class="site-header">
-    <div class="navbar">
-      <a href="./Homepage.html">
-        <div class="logo">PlaySpot</div>
-      </a>
-      <div class="bookings">
-        <a href="./findfield.html">Find a Field</a>
-        <a href="./mybookings.html">My Bookings</a>
-        <a href="#">For Owners</a>
-      </div>
-      <div class="nav-links">
-        <a href="./loginn.html">Login</a>
-        <a href="./Signup.html">Sign Up</a>
-      </div>
-    </div>
-  </header>
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="navbar">
+            <a href="./Homepage.html">
+                <div class="logo">PlaySpot</div>
+            </a>
+            <div class="bookings">
+                <a href="./findfield.html">Find a Field</a>
+                <a href="./mybookings.html">My Bookings</a>
+                <a href="#">For Owners</a>
+            </div>
+            <div class="nav-links">
+                <a href="./loginn.html">Login</a>
+                <a href="./Signup.html">Sign Up</a>
+            </div>
+        </div>
+    </header>
 
-<!-- Bookings -->
-<div class="container">
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="main-content">
+        <div class="container">
 
-    <!-- Bookings -->
-<div class="container">
+            <!-- Booking 1 -->
+            <div class="booking">
+                <div class="booking-image">
+                    <img src="https://th.bing.com/th/id/OIP.oe-sr3_AwKnPl1lb8kJBjwHaFj" alt="Padel Court">
+                </div>
+                <div class="booking-details">
+                    <h2>Padel X Lahore</h2>
+                    <div class="info">📍 DHA Phase 6, Lahore</div>
+                    <div class="info">📅 Saturday, December 20, 2025</div>
+                    <div class="info">⏰ 5:00 PM - 7:00 PM</div>
+                    <div class="buttons">
+                        <button class="confirmed">Confirmed</button>
+                        <button class="cancel">Cancel Booking</button>
+                    </div>
+                </div>
+            </div>
 
-    <div class="booking">
-        <h2>Padel X Lahore</h2>
-        <div class="info">📍 DHA Phase 6, Lahore</div>
-        <img src="https://th.bing.com/th/id/OIP.oe-sr3_AwKnPl1lb8kJBjwHaFj?w=212&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Padel Court">
-        <div class="info">📅 Saturday, December 20, 2025</div>
-        <div class="info">⏰ 5:00 PM - 7:00 PM</div>
-        <div class="buttons">
-            <button class="confirmed">Confirmed</button>
-            <button class="cancel">Cancel Booking</button>
+            <!-- Booking 2 -->
+            <div class="booking">
+                <div class="booking-image">
+                    <img src="https://th.bing.com/th/id/OIP.PuMZpbvxtdP-9AAhitJp4QHaEK" alt="Padel Court">
+                </div>
+                <div class="booking-details">
+                    <h2>Smash Padel Islamabad</h2>
+                    <div class="info">📍 F-11, Islamabad</div>
+                    <div class="info">📅 Monday, December 22, 2025</div>
+                    <div class="info">⏰ 6:00 PM - 8:00 PM</div>
+                    <div class="buttons">
+                        <button class="confirmed">Confirmed</button>
+                        <button class="cancel">Cancel Booking</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking 3 -->
+            <div class="booking">
+                <div class="booking-image">
+                    <img src="https://th.bing.com/th/id/OIP.BAuYJHr3e0OY2aTSMUm1ZwHaFi" alt="Padel Court">
+                </div>
+                <div class="booking-details">
+                    <h2>Padel Central Karachi</h2>
+                    <div class="info">📍 Clifton, Karachi</div>
+                    <div class="info">📅 Wednesday, December 24, 2025</div>
+                    <div class="info">⏰ 4:00 PM - 6:00 PM</div>
+                    <div class="buttons">
+                        <button class="confirmed">Confirmed</button>
+                        <button class="cancel">Cancel Booking</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking 4 -->
+            <div class="booking">
+                <div class="booking-image">
+                    <img src="https://th.bing.com/th/id/OIP.6jTS3IEWPPk9yFPg598xDQHaE8" alt="Padel Court">
+                </div>
+                <div class="booking-details">
+                    <h2>Arena Padel Lahore</h2>
+                    <div class="info">📍 Gulberg, Lahore</div>
+                    <div class="info">📅 Friday, December 26, 2025</div>
+                    <div class="info">⏰ 7:00 PM - 9:00 PM</div>
+                    <div class="buttons">
+                        <button class="confirmed">Confirmed</button>
+                        <button class="cancel">Cancel Booking</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <div class="booking">
-        <h2>Smash Padel Islamabad</h2>
-        <div class="info">📍 F-11, Islamabad</div>
-        <img src="https://th.bing.com/th/id/OIP.PuMZpbvxtdP-9AAhitJp4QHaEK?w=319&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Padel Court">
-        <div class="info">📅 Monday, December 22, 2025</div>
-        <div class="info">⏰ 6:00 PM - 8:00 PM</div>
-        <div class="buttons">
-            <button class="confirmed">Confirmed</button>
-            <button class="cancel">Cancel Booking</button>
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-container">
+
+
+            <div class="footer-section footer-left">
+                <div class="logo">PlaySpot</div>
+                <div class="tagline"></div>
+                <div class="copyright">© 2025–26 PlaySpot. All rights reserved.</div>
+            </div>
+
+
+            <div class="footer-section footer-center">
+                <p style="font-weight: bold; font-size: 23px;">Contact Us</p>
+                <p>AIR UNIVERSITY</p>
+                <p>+92 346 5535959</p>
+                <p>abbassalman234@gmail.com</p>
+            </div>
+
+
+            <div class="footer-section footer-right">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms and Conditions</a>
+            </div>
+
         </div>
-    </div>
-
-    <div class="booking">
-        <h2>Padel Central Karachi</h2>
-        <div class="info">📍 Clifton, Karachi</div>
-        <img src="https://th.bing.com/th/id/OIP.BAuYJHr3e0OY2aTSMUm1ZwHaFi?w=212&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Padel Court">
-        <div class="info">📅 Wednesday, December 24, 2025</div>
-        <div class="info">⏰ 4:00 PM - 6:00 PM</div>
-        <div class="buttons">
-            <button class="confirmed">Confirmed</button>
-            <button class="cancel">Cancel Booking</button>
-        </div>
-    </div>
-
-    <div class="booking">
-        <h2>Arena Padel Lahore</h2>
-        <div class="info">📍 Gulberg, Lahore</div>
-        <img src="https://th.bing.com/th/id/OIP.6jTS3IEWPPk9yFPg598xDQHaE8?w=233&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1"alt="Padel Court Lahore">  
-        <div class="info">📅 Friday, December 26, 2025</div>
-        <div class="info">⏰ 7:00 PM - 9:00 PM</div>
-        <div class="buttons">
-            <button class="confirmed">Confirmed</button>
-            <button class="cancel">Cancel Booking</button>
-        </div>
-    </div>
-
-
-<!-- Footer -->
-<div class="footer">
-    <div class="footer-container">
-
-        <div class="footer-box">
-            <h3>PlaySpot</h3>
-            <p>© 2025–26 PlaySpot. All rights reserved.</p>
-        </div>
-
-        <div class="footer-box">
-            <h3>Contact Us</h3>
-            <p>AIR UNIVERSITY</p>
-            <p>+92 346 5535959</p>
-            <p>playspot@gmail.com</p>
-        </div>
-
-        <div class="footer-box">
-            <p>Privacy Policy</p>
-            <p>Terms and Conditions</p>
-        </div>
-
-    </div>
-</div>
+    </footer>
 
 </body>
+
 </html>
