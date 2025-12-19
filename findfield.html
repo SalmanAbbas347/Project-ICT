@@ -12,31 +12,58 @@
         }
 
         /* NAVBAR */
-        .navbar {
-            background: white;
-            padding: 15px 40px;
-        }
+       
+ header {
+     background-color: #ffffff;
+    position: fixed;     
+    top: 0;
+    left: 0;
+    width: 100%;
+    }
+  .navbar {
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar a{
+      text-decoration: none;
+    }
 
-        .navbar h2 {
-            display: inline;
-            color: #0b3c6d;
-        }
+    .logo {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #002d5c;
+    
+    }
 
-        .navbar span {
-            float: right;
-        }
+    .bookings a {
+      color: #002d5c;
+      padding-left: 30px;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-        .navbar a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: black;
-        }
+    .bookings a:hover {
+      color: #007bff;
+    }
 
+    .nav-links a {
+      text-decoration: none;
+      color: #002d5c;
+      margin-left: 25px;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      border-bottom: 3px solid #002d5c;
+      padding-bottom: 4px;
+    }
         /* HERO */
         .hero {
             background: #0b3c6d;
             color: white;
-            padding: 50px 40px;
+            padding: 75px 40px;
         }
 
         /* SEARCH */
@@ -154,7 +181,7 @@
         .footer {
             background-color: #0b1d3a;
             color: #ffffff;
-            padding: 45px 60px;
+            padding: 35px 60px;
             margin-top: 40px;
         }
 
@@ -181,14 +208,22 @@
 <body>
 
     <!-- NAVBAR -->
+    <header>
     <div class="navbar">
-        <h2>PlaySpot</h2>
-        <span>
-            <a href="#">Find a Field</a>
-            <a href="#">My Bookings</a>
-            <a href="#">Login</a>
-        </span>
+      <a href="./Homepage.html">
+        <div class="logo">PlaySpot</div>
+      </a>
+      <div class="bookings">
+        <a href="./findfield.html">Find a Field</a>
+        <a href="./mybookings.html">My Bookings</a>
+        <a href="#">For Owners</a>
+      </div>
+      <div class="nav-links">
+        <a href="./loginn.html">Login</a>
+        <a href="./Signup.html">Sign Up</a>
+      </div>
     </div>
+  </header>
 
     <!-- HERO -->
     <div class="hero">

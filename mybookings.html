@@ -12,25 +12,52 @@ body{
 }
 
 /* Header */
-.header{
-    background:white;
-    padding:15px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:1px solid #ddd;
-}
+header {
+     background-color: white;
+    position: fixed;     
+    top: 0;
+    left: 0;
+    width: 100%;
+    }
+  .navbar {
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar a{
+      text-decoration: none;
+    }
 
-.logo{
-    font-size:22px;
-    font-weight:bold;
-}
+    .logo {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #002d5c;
+    
+    }
 
-.nav a{
-    margin:0 10px;
-    text-decoration:none;
-    color:black;
-}
+    .bookings a {
+      color: #002d5c;
+      padding-left: 30px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .bookings a:hover {
+      color: #007bff;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #002d5c;
+      margin-left: 25px;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      border-bottom: 3px solid #002d5c;
+      padding-bottom: 4px;
+    }
 
 /* Container */
 .container{
@@ -41,9 +68,9 @@ body{
 /* Booking Card */
 .booking{
     background:white;
-    padding:20px;
+    padding:59px;
     margin-bottom:20px;
-    border-radius:6px;
+    border-radius:8px;
     border:1px solid #ddd;
 }
 
@@ -107,14 +134,22 @@ body{
 <body>
 
 <!-- Header -->
-<div class="header">
-    <div class="logo">PlaySpot</div>
-    <div class="nav">
-        <a href="#">Find a Field</a>
-        <a href="#"><b>My Bookings</b></a>
+<header>
+    <div class="navbar">
+      <a href="./Homepage.html">
+        <div class="logo">PlaySpot</div>
+      </a>
+      <div class="bookings">
+        <a href="./findfield.html">Find a Field</a>
+        <a href="./mybookings.html">My Bookings</a>
         <a href="#">For Owners</a>
+      </div>
+      <div class="nav-links">
+        <a href="./loginn.html">Login</a>
+        <a href="./Signup.html">Sign Up</a>
+      </div>
     </div>
-</div>
+  </header>
 
 <!-- Bookings -->
 <div class="container">
