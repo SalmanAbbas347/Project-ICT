@@ -45,7 +45,7 @@
 
     /* HERO */
     .hero{
-      margin-top:90px;
+      margin-top:75px;
       background:#0b3c6d;
       color:white;
       padding:70px 40px;
@@ -93,6 +93,11 @@
       border-radius:6px;
       overflow:hidden;
       box-shadow:0 4px 10px rgba(0,0,0,.1);
+       transition: transform 0.3s ease, box shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     }
     .card img{
       width:100%;
@@ -106,7 +111,9 @@
       color:green;
       font-weight:bold;
     }
-
+    a{
+      text-decoration: none;
+    }
     /* FOOTER */
     .footer{
       background:#0b1d3a;
@@ -124,12 +131,7 @@
     }
     .footer-box p{margin:5px 0}
 
-    /* RESPONSIVE */
-    @media(max-width:900px){
-      .main{flex-direction:column}
-      .filters{width:100%}
-      .card{width:100%}
-    }
+    
   </style>
 </head>
 
@@ -142,7 +144,7 @@
     <div class="bookings">
       <a href="./findfield.html">Find a Field</a>
       <a href="./mybookings.html">My Bookings</a>
-      <a href="#">For Owners</a>
+      <a href="./owner.html">For Owners</a>
     </div>
     <div class="nav-links">
       <a href="./loginn.html">Login</a>
@@ -180,6 +182,7 @@
   </div>
 
   <!-- CARD 1 -->
+   <a href="./elitecricketarena.html">
   <div class="card">
     <img src="https://www.dugoutchennai.com/wp-content/uploads/2022/12/image_cricket-2.jpg">
     <div class="card-content">
@@ -188,9 +191,10 @@
       <p>Amenities: Parking, Floodlights</p>
       <p class="price">PKR 2000 / hour</p>
     </div>
-  </div>
-
+   </div>
+   </a>
   <!-- CARD 2 -->
+   <a href="./islamabadpadel.html">
   <div class="card">
     <img src="http://mypadellife.com/cdn/shop/articles/Action_in_plays.jpg?v=1714043048">
     <div class="card-content">
@@ -200,8 +204,9 @@
       <p class="price">PKR 1500 / hour</p>
     </div>
   </div>
-
+   </a>
   <!-- CARD 3 -->
+   <a href="./ayubpark.html">
   <div class="card">
     <img src="https://image.made-in-china.com/2f0j00PLGbABvtZipn/Factory-Wholesale-Custom-Panoramic-Paddle-Tennis-Indoor-Outdoor-Paddle-Court.jpg">
     <div class="card-content">
@@ -210,8 +215,8 @@
       <p>Amenities: Parking, Cafe</p>
       <p class="price">PKR 1500 / hour</p>
     </div>
-  </div>
-
+   </div>
+   </a>
 </div>
 
 <!-- FOOTER -->

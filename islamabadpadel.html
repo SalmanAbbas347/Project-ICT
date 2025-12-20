@@ -11,61 +11,157 @@
   --green:#2ecc71;
 }
 
-*{box-sizing:border-box;font-family:Arial}
-body{margin:0;background:var(--bg)}
+*{
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+}
 
 /* NAV */
-nav{
-  background:var(--blue);
-  color:#fff;
-  padding:15px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-nav a{color:#fff;text-decoration:none;margin:0 10px}
+.site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar {
+            background-color: #002d5c;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: white;
+        }
+
+        .bookings a,
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+        }
+
+        .bookings a:hover,
+        .nav-links a:hover {
+            color: #007bff;
+        }
+
 
 /* LAYOUT */
-.container{display:flex;gap:25px;padding:30px 40px}
+.container{
+  display:flex;
+  gap:25px;
+  padding:30px 40px;
+  align-items:flex-start;
+}
 .left{flex:2}
 .right{flex:1}
+
 .card{
   background:#fff;
-  padding:20px;
-  border-radius:10px;
+  padding:22px;
+  border-radius:12px;
   margin-bottom:20px;
+}
+
+/* IMAGE */
+.court-img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  border-radius:10px;
+  margin:15px 0 18px;
 }
 
 /* CALENDAR + TIME */
 .calendar,.times{
   display:grid;
-  gap:8px;
+  gap:10px;
 }
-.calendar{grid-template-columns:repeat(7,1fr)}
-.times{grid-template-columns:repeat(3,1fr);margin-top:10px}
+.calendar{
+  grid-template-columns:repeat(7,1fr);
+  margin-top:15px;
+}
+.times{
+  grid-template-columns:repeat(3,1fr);
+  margin-top:15px;
+}
 
 .calendar div,.time{
-  padding:10px;
+  padding:12px;
   text-align:center;
-  border-radius:6px;
+  border-radius:8px;
   cursor:pointer;
   background:#eef1f7;
+  font-weight:500;
 }
+
 .active,.selected{
   background:var(--green);
   color:#fff;
 }
-
+a{
+  text-decoration: none;
+}
 /* BUTTON */
 button{
   width:100%;
-  margin-top:15px;
-  padding:12px;
+  margin-top:20px;
+  padding:14px;
   border:none;
   background:var(--blue);
   color:#fff;
-  border-radius:6px;
+  border-radius:8px;
+  font-size:15px;
   cursor:pointer;
+}
+
+/* AMENITIES */
+.amenities{
+  margin-top:20px;
+  background:#eef1f7;
+  padding:18px;
+  border-radius:10px;
+}
+.amenities h3{
+  margin:0 0 12px;
+  color:var(--blue);
+}
+.amenities-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+.amenity{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.tick{
+  width:20px;
+  height:20px;
+  background:var(--green);
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
 }
 
 /* POPUP */
@@ -73,184 +169,162 @@ button{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.4);
-  display:flex;
+  background:rgba(0,0,0,.45);
   align-items:center;
   justify-content:center;
 }
-.popup div{
+.popup-content{
   background:#fff;
-  padding:25px;
-  border-radius:10px;
+  padding:28px;
+  border-radius:12px;
   text-align:center;
+  width:320px;
 }
 
 /* FOOTER */
 .footer{
   background:var(--blue);
   color:#fff;
-  padding:40px;
+  padding:45px 40px;
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
-  align-items:center;
 }
-.footer-left{text-align:left}
-.footer-center{text-align:center}
-.footer-right{text-align:right}
-.footer p{margin:6px 0;font-size:14px}
-
-/* AMENITIES */
-.amenities{
-  margin-top:15px;
-  background:#eef1f7;
-  padding:15px;
-  border-radius:8px;
-}
-.amenities h3{
-  margin-bottom:10px;
-  color:var(--blue);
-}
-.amenities-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  color:var(--blue);
-}
-.amenity{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-weight:500;
-}
-.tick{
-  display:inline-block;
-  width:20px;
-  height:20px;
-  background:var(--green);
-  color:white;
-  border-radius:50%;
-  text-align:center;
-  line-height:20px;
+.footer p{
+  margin:8px 0;
   font-size:14px;
-  font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <strong>PlaySpot</strong>
-  <div>
-    <a href="#">Find a Field</a>
-    <a href="#">Bookings</a>
-    <a href="#">Owners</a>
+<!-- NAV -->
+<header class="site-header">
+  <div class="navbar">
+    <a href="#"><div class="logo">PlaySpot</div></a>
+    <div class="bookings">
+      <a href="./findfield.html">Find a Field</a>
+      <a href="./mybookings.html">My Bookings</a>
+      <a href="./owner.html">For Owners</a>
+    </div>
+    <div class="nav-links">
+      <a href="./loginn.html">Login</a>
+      <a href="./Signup.html">Sign Up</a>
+    </div>
   </div>
-</nav>
+</header>
 
 <!-- CONTENT -->
 <div class="container">
 
-<!-- LEFT SIDE -->
-<div class="left">
-  <div class="card">
-    <h2>Islamabad Padel Court</h2>
-    <p>📍 Islamabad</p>
-    <p>
-      Modern padel court with synthetic flooring, floodlights for evening games, 
-      and a friendly environment for both beginners and pro players.
-    </p>
+  <!-- LEFT -->
+  <div class="left">
+    <div class="card">
+      <h2>Islamabad Padel Court</h2>
+      <p>📍 Islamabad</p>
+      <p>Modern padel court with synthetic flooring and floodlights.</p>
 
-    <!-- AMENITIES SECTION -->
-    <div class="amenities">
-      <h3>Amenities</h3>
-      <div class="amenities-grid">
-        <div class="amenity"><span class="tick">✔</span> Parking</div>
-        <div class="amenity"><span class="tick">✔</span> Cafe</div>
+      <!-- IMAGE ADDED HERE -->
+      <img
+        src="http://mypadellife.com/cdn/shop/articles/Action_in_plays.jpg?v=1714043048"
+        alt="Padel Court"
+        class="court-img"
+      >
+
+      <div class="amenities">
+        <h3>Amenities</h3>
+        <div class="amenities-grid">
+          <div class="amenity"><span class="tick">✔</span> Parking</div>
+          <div class="amenity"><span class="tick">✔</span> Cafe</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <h3>Player Reviews</h3>
-    <p><b>Ali (Islamabad):</b> ⭐⭐⭐⭐⭐ Excellent padel courts and well-lit for evening play</p>
-    <p><b>Sara (Islamabad):</b> ⭐⭐⭐⭐ Great spot for casual padel with friends</p>
-    <p><b>Hassan (Rawalpindi):</b> ⭐⭐⭐⭐ Clean courts and friendly staff</p>
-  </div>
-</div>
-
-<!-- RIGHT SIDE -->
-<div class="right">
-  <div class="card">
-    <h3>Book Your Slot</h3>
-    <b style="color:green">PKR 1500 / hour</b>
-
-    <div class="calendar" id="dates">
-      <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
-      <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
+    <div class="card">
+      <h3>Player Reviews</h3>
+      <p><b>Ali (Islamabad):</b> ⭐⭐⭐⭐⭐ Excellent courts</p>
+      <p><b>Sara (Islamabad):</b> ⭐⭐⭐⭐ Great evening games</p>
+      <p><b>Hassan (Rawalpindi):</b> ⭐⭐⭐⭐ Friendly staff</p>
     </div>
-
-    <div class="times">
-      <div class="time">9 AM</div>
-      <div class="time">11 AM</div>
-      <div class="time">1 PM</div>
-      <div class="time">3 PM</div>
-      <div class="time">5 PM</div>
-      <div class="time">7 PM</div>
-    </div>
-
-    <button onclick="book()">Book Now</button>
   </div>
-</div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <div class="card">
+      <h3>Book Your Slot</h3>
+      <b style="color:green">PKR 1500 / hour</b>
+
+      <div class="calendar" id="dates">
+        <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
+        <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
+      </div>
+
+      <div class="times">
+        <div class="time">9 AM</div>
+        <div class="time">11 AM</div>
+        <div class="time">1 PM</div>
+        <div class="time">3 PM</div>
+        <div class="time">5 PM</div>
+        <div class="time">7 PM</div>
+      </div>
+
+      <button onclick="book()">Book Now</button>
+    </div>
+  </div>
 
 </div>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-left">
+  <div>
     <h3>PlaySpot</h3>
-    <p>© 2025–26 PlaySpot. All rights reserved.</p>
+    <p>© 2025–26 PlaySpot</p>
   </div>
-
-  <div class="footer-center">
-    <h3>Contact Us</h3>
-    <p>AIR UNIVERSITY</p>
+  <div>
+    <h3>Contact</h3>
+    <p>Air University</p>
     <p>+92 346 5535959</p>
-    <p>abbassalman234@gmail.com</p>
   </div>
-
-  <div class="footer-right">
+  <div>
     <p>Privacy Policy</p>
-    <p>Terms and Conditions</p>
+    <p>Terms & Conditions</p>
   </div>
 </footer>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
-  <div>
+  <div class="popup-content">
     <h3>✅ Booking Successful</h3>
-    <p>Your slot at Islamabad Padel Court has been booked.</p>
+    <p>Your slot has been booked.</p>
     <button onclick="closePop()">OK</button>
   </div>
 </div>
 
 <script>
-document.querySelectorAll('#dates div').forEach(d=>{
+const popup = document.getElementById("popup");
+
+document.querySelectorAll("#dates div").forEach(d=>{
   d.onclick=()=>{
-    document.querySelectorAll('#dates div').forEach(x=>x.classList.remove('active'));
-    d.classList.add('active');
+    document.querySelectorAll("#dates div").forEach(x=>x.classList.remove("active"));
+    d.classList.add("active");
   }
 });
-document.querySelectorAll('.time').forEach(t=>{
+
+document.querySelectorAll(".time").forEach(t=>{
   t.onclick=()=>{
-    document.querySelectorAll('.time').forEach(x=>x.classList.remove('selected'));
-    t.classList.add('selected');
+    document.querySelectorAll(".time").forEach(x=>x.classList.remove("selected"));
+    t.classList.add("selected");
   }
 });
-function book(){popup.style.display='flex'}
-function closePop(){popup.style.display='none'}
+
+function book(){
+  popup.style.display="flex";
+}
+function closePop(){
+  popup.style.display="none";
+}
 </script>
 
 </body>
 </html>
+
