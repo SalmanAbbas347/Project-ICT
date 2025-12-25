@@ -1,288 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>PlaySpot – Book Slot</title>
+  <meta charset="UTF-8">
+  <title>PlaySpot – Book Slot</title>
 
-<style>
-:root{
-  --blue:#0b1d3a;
-  --bg:#f4f6fb;
-  --green:#2ecc71;
-}
+  <style>
+    :root {
+      --blue: #0b1d3a;
+      --bg: #f4f6fb;
+      --green: #2ecc71;
+    }
 
-*{box-sizing:border-box;font-family:Arial}
-body{margin:0;background:var(--bg)}
+    * {
+      box-sizing: border-box;
+      font-family: Arial
+    }
 
-/* NAV */
-.site-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
-}
-.navbar{
-  background:#002d5c;
-  padding:20px 5%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.navbar a{text-decoration:none}
-.logo{
-  font-size:1.8em;
-  font-weight:700;
-  color:white;
-}
-.bookings a,.nav-links a{
-  color:white;
-  margin-left:25px;
-  font-weight:500;
-}
-.bookings a:hover,.nav-links a:hover{color:#007bff}
+    body {
+      margin: 0;
+      background: var(--bg)
+    }
 
-/* LAYOUT */
-.container{
-  display:flex;
-  gap:25px;
-  padding:60px 40px;
-  padding-bottom: 10px;
-}
-.left{flex:2}
-.right{flex:1}
-.card{
-  background:#fff;
-  padding:20px;
-  border-radius:10px;
-  margin-bottom:20px;
-}
-.card p{
-  font-weight: bold;
-}
+    /* NAV */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
 
-/* IMAGE */
-.ground-img{
-  width:100%;
-  height:240px;
-  object-fit:cover;
-  border-radius:10px;
-  margin:15px 0;
-}
+    .navbar {
+      background: #002d5c;
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-/* CALENDAR + TIME */
-.calendar,.times{display:grid;gap:8px}
-.calendar{grid-template-columns:repeat(7,1fr)}
-.times{grid-template-columns:repeat(3,1fr);margin-top:10px}
+    .navbar a {
+      text-decoration: none
+    }
 
-.calendar div,.time{
-  padding:10px;
-  text-align:center;
-  border-radius:6px;
-  cursor:pointer;
-  background:#eef1f7;
-}
-.active,.selected{
-  background:var(--green);
-  color:white;
-}
-a{
-  text-decoration: none;
-}
-/* BUTTON */
-button{
-  width:100%;
-  margin-top:15px;
-  padding:12px;
-  border:none;
-  background:var(--blue);
-  color:#fff;
-  border-radius:6px;
-  cursor:pointer;
-}
+    .logo {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: white;
+    }
 
-/* AMENITIES */
-.amenities{
-  margin-top:15px;
-  background:#eef1f7;
-  padding:15px;
-  border-radius:8px;
-}
-.amenities-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-.tick{
-  display:inline-block;
-  width:20px;
-  height:20px;
-  background:var(--green);
-  color:#fff;
-  border-radius:50%;
-  text-align:center;
-  line-height:20px;
-}
+    .bookings a,
+    .nav-links a {
+      color: white;
+      margin-left: 25px;
+      font-weight: 500;
+    }
 
-/* POPUP */
-.popup{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.4);
-  align-items:center;
-  justify-content:center;
-}
-.popup-content{
-  background:#fff;
-  padding:25px;
-  border-radius:10px;
-  text-align:center;
-  width:300px;
-}
+    .bookings a:hover,
+    .nav-links a:hover {
+      color: #007bff
+    }
 
-/* FOOTER */
-.footer{
-  background:var(--blue);
-  color:#fff;
-  padding:40px;
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-}
-</style>
+    /* LAYOUT */
+    .container {
+      display: flex;
+      gap: 25px;
+      padding: 60px 40px;
+      padding-bottom: 10px;
+    }
+
+    .left {
+      flex: 2
+    }
+
+    .right {
+      flex: 1
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .card p {
+      font-weight: bold;
+    }
+
+    /* IMAGE */
+    .ground-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    /* CALENDAR + TIME */
+    .calendar,
+    .times {
+      display: grid;
+      gap: 8px
+    }
+
+    .calendar {
+      grid-template-columns: repeat(7, 1fr)
+    }
+
+    .times {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 10px
+    }
+
+    .calendar div,
+    .time {
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #eef1f7;
+    }
+
+    .active,
+    .selected {
+      background: var(--green);
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* BUTTON */
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 12px;
+      border: none;
+      background: var(--blue);
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* AMENITIES */
+    .amenities {
+      margin-top: 15px;
+      background: #eef1f7;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .tick {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 20px;
+    }
+
+    /* POPUP */
+    .popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .4);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--blue);
+      color: #fff;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header class="site-header">
-  <div class="navbar">
-    <a href="./Homepage.html"><div class="logo">PlaySpot</div></a>
-    <div class="bookings">
-      <a href="./findfield.html">Find a Field</a>
-      <a href="./mybookings.html">My Bookings</a>
-      <a href="./owner.html">For Owners</a>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="navbar">
+      <a href="./Homepage.html">
+        <div class="logo">PlaySpot</div>
+      </a>
+      <div class="bookings">
+        <a href="./findfield.html">Find a Field</a>
+        <a href="./mybookings.html">My Bookings</a>
+        <a href="./owner.html">For Owners</a>
+      </div>
+      <div class="nav-links">
+        <a href="./loginn.html">Login</a>
+        <a href="./Signup.html">Sign Up</a>
+      </div>
     </div>
-    <div class="nav-links">
-      <a href="./loginn.html">Login</a>
-      <a href="./Signup.html">Sign Up</a>
-    </div>
-  </div>
-</header>
+  </header>
 
-<!-- CONTENT -->
-<div class="container">
+  <!-- CONTENT -->
+  <div class="container">
 
-  <!-- LEFT -->
-  <div class="left">
+    <!-- LEFT -->
+    <div class="left">
 
-    <div class="card">
-      <h2>Elite Cricket Arena</h2>
-      <p>📍 Lahore</p>
-      <p>Professional cricket arena with turf wickets and floodlights.</p>
+      <div class="card">
+        <h2>Elite Cricket Arena</h2>
+        <p>📍 Lahore</p>
+        <p>Professional cricket arena with turf wickets and floodlights.</p>
 
-      <img
-        src="https://www.dugoutchennai.com/wp-content/uploads/2022/12/image_cricket-2.jpg"
-        alt="Cricket Ground"
-        class="ground-img"
-      >
+        <img src="https://www.dugoutchennai.com/wp-content/uploads/2022/12/image_cricket-2.jpg" alt="Cricket Ground"
+          class="ground-img">
 
-      <div class="amenities">
-        <h3>Amenities</h3>
-        <div class="amenities-grid">
-          <div><span class="tick">✔</span> Turf Wickets</div>
-          <div><span class="tick">✔</span> Floodlights</div>
-          <div><span class="tick">✔</span> Locker Rooms</div>
-          <div><span class="tick">✔</span> Parking</div>
+        <div class="amenities">
+          <h3>Amenities</h3>
+          <div class="amenities-grid">
+            <div><span class="tick">✔</span> Turf Wickets</div>
+            <div><span class="tick">✔</span> Floodlights</div>
+            <div><span class="tick">✔</span> Locker Rooms</div>
+            <div><span class="tick">✔</span> Parking</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- PLAYER REVIEWS -->
-    <div class="card">
-      <h3>Player Reviews</h3>
-      <p><br>Shaheer (Islamabad):</br> ⭐⭐⭐⭐⭐ </p> <p1>Well-maintained pitches with consistent bounce and plenty of space</p1>
-      <p><br>Ahmed Raza(Islamabad):</br> ⭐⭐⭐⭐ <br> </p><p1>Friendly atmosphere and professional indoor cricket setup.</p1>
-      <p><br>Maham (Rawalpindi):</br> ⭐⭐⭐⭐ </p> <p1>Great indoor cricket venue for teams and casual players alike.</p1>
-    </div>
-
-  </div>
-
-  <!-- RIGHT -->
-  <div class="right">
-    <div class="card">
-      <h3>Book Your Slot</h3>
-      <b style="color:green">PKR 2000 / hour</b>
-
-      <div class="calendar" id="dates">
-        <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
-        <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
+      <!-- PLAYER REVIEWS -->
+      <div class="card">
+        <h3>Player Reviews</h3>
+        <p><br>Shaheer (Islamabad):</br> ⭐⭐⭐⭐⭐ </p>
+        <p1>Well-maintained pitches with consistent bounce and plenty of space</p1>
+        <p><br>Ahmed Raza(Islamabad):</br> ⭐⭐⭐⭐ <br> </p>
+        <p1>Friendly atmosphere and professional indoor cricket setup.</p1>
+        <p><br>Maham (Rawalpindi):</br> ⭐⭐⭐⭐ </p>
+        <p1>Great indoor cricket venue for teams and casual players alike.</p1>
       </div>
 
-      <div class="times">
-        <div class="time">9 AM</div>
-        <div class="time">11 AM</div>
-        <div class="time">1 PM</div>
-        <div class="time">3 PM</div>
-        <div class="time">5 PM</div>
-        <div class="time">7 PM</div>
-      </div>
+    </div>
 
-      <button onclick="book()">Book Now</button>
+    <!-- RIGHT -->
+    <div class="right">
+      <div class="card">
+        <h3>Book Your Slot</h3>
+        <b style="color:green">PKR 2000 / hour</b>
+
+        <div class="calendar" id="dates">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+          <div>13</div>
+          <div>14</div>
+        </div>
+
+        <div class="times">
+          <div class="time">9 AM</div>
+          <div class="time">11 AM</div>
+          <div class="time">1 PM</div>
+          <div class="time">3 PM</div>
+          <div class="time">5 PM</div>
+          <div class="time">7 PM</div>
+        </div>
+
+        <button onclick="book()">Book Now</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>
+      <h3>PlaySpot</h3>
+      <p>© 2025–26 PlaySpot</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>Air University</p>
+      <p>+92 346 5535959</p>
+      <p>abbassalman234@gmail.com</p>
+    </div>
+    <div>
+      <p>Privacy Policy</p>
+      <p>Terms & Conditions</p>
+    </div>
+  </footer>
+
+  <!-- POPUP -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>✅ Booking Successful</h3>
+      <p>Your slot has been booked.</p>
+      <button onclick="closePop()">OK</button>
     </div>
   </div>
 
-</div>
+  <script>
+    var popup = document.getElementById("popup");
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div>
-    <h3>PlaySpot</h3>
-    <p>© 2025–26 PlaySpot</p>
-  </div>
-  <div>
-    <h3>Contact</h3>
-    <p>Air University</p>
-    <p>+92 346 5535959</p>
-    <p>abbassalman234@gmail.com</p>
-  </div>
-  <div>
-    <p>Privacy Policy</p>
-    <p>Terms & Conditions</p>
-  </div>
-</footer>
 
-<!-- POPUP -->
-<div class="popup" id="popup">
-  <div class="popup-content">
-    <h3>✅ Booking Successful</h3>
-    <p>Your slot has been booked.</p>
-    <button onclick="closePop()">OK</button>
-  </div>
-</div>
+    var dates = document.querySelectorAll("#dates div");
 
-<script>
-const popup=document.getElementById('popup');
+    for (var i = 0; i < dates.length; i++) {
+      dates[i].onclick = function () {
 
-document.querySelectorAll('#dates div').forEach(d=>{
-  d.onclick=()=>{
-    document.querySelectorAll('#dates div').forEach(x=>x.classList.remove('active'));
-    d.classList.add('active');
-  }
-});
 
-document.querySelectorAll('.time').forEach(t=>{
-  t.onclick=()=>{
-    document.querySelectorAll('.time').forEach(x=>x.classList.remove('selected'));
-    t.classList.add('selected');
-  }
-});
+        for (var j = 0; j < dates.length; j++) {
+          dates[j].classList.remove("active");
+        }
 
-function book(){popup.style.display='flex'}
-function closePop(){popup.style.display='none'}
-</script>
+
+        this.classList.add("active");
+      };
+    }
+
+
+    var times = document.querySelectorAll(".time");
+
+    for (var i = 0; i < times.length; i++) {
+      times[i].onclick = function () {
+
+
+        for (var j = 0; j < times.length; j++) {
+          times[j].classList.remove("selected");
+        }
+
+
+        this.classList.add("selected");
+      };
+    }
+    function book() {
+      popup.style.display = "flex";
+    }
+
+    function closePop() {
+      popup.style.display = "none";
+    }
+  </script>
+
 
 </body>
+
 </html>
-
-

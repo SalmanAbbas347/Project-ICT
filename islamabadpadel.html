@@ -305,29 +305,47 @@ button{
 </div>
 
 <script>
-const popup = document.getElementById("popup");
+    var popup = document.getElementById("popup");
 
-document.querySelectorAll("#dates div").forEach(d=>{
-  d.onclick=()=>{
-    document.querySelectorAll("#dates div").forEach(x=>x.classList.remove("active"));
-    d.classList.add("active");
-  }
-});
 
-document.querySelectorAll(".time").forEach(t=>{
-  t.onclick=()=>{
-    document.querySelectorAll(".time").forEach(x=>x.classList.remove("selected"));
-    t.classList.add("selected");
-  }
-});
+    var dates = document.querySelectorAll("#dates div");
 
-function book(){
-  popup.style.display="flex";
-}
-function closePop(){
-  popup.style.display="none";
-}
-</script>
+    for (var i = 0; i < dates.length; i++) {
+      dates[i].onclick = function () {
+
+
+        for (var j = 0; j < dates.length; j++) {
+          dates[j].classList.remove("active");
+        }
+
+
+        this.classList.add("active");
+      };
+    }
+
+
+    var times = document.querySelectorAll(".time");
+
+    for (var i = 0; i < times.length; i++) {
+      times[i].onclick = function () {
+
+
+        for (var j = 0; j < times.length; j++) {
+          times[j].classList.remove("selected");
+        }
+
+
+        this.classList.add("selected");
+      };
+    }
+    function book() {
+      popup.style.display = "flex";
+    }
+
+    function closePop() {
+      popup.style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
