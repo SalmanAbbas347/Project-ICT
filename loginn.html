@@ -286,6 +286,77 @@
     .footer-right {
         text-align: left;
     }
+
+    /* ======Responsiveness========= */
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 18px;
+        }
+
+        .bookings,
+        .nav-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 22px;
+        }
+
+        .main-content {
+            padding-top: 150px;
+            padding-bottom: 35px;
+        }
+
+        .login-card {
+            flex-direction: column;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .illustration-area {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .illustration-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .login-details {
+            padding: 25px;
+        }
+
+        .login-header {
+            margin-bottom: 25px;
+            padding: 14px 25px;
+            font-size: 22px;
+        }
+
+        .login-form {
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        footer {
+            padding: 30px 20px;
+        }
+
+        .footer-container {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
 </style>
 
 <body>

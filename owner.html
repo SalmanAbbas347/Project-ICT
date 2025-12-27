@@ -43,12 +43,6 @@
       margin-bottom: 10px;
       font-size: 15px;
     }
-
-    /* .sidebar a:hover {
-      background: #1e293b;
-      color: #fff;
-    } */
-
     .logout {
       margin-top: auto;
       background: #dc2626;
@@ -170,6 +164,45 @@
     a{
       text-decoration: none;
     }
+
+    /* ====== RESPONSIVE ====== */
+@media (max-width: 768px){
+
+  body{
+    flex-direction: column;
+  }
+
+  .sidebar{
+    width: 100%;
+    padding: 15px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sidebar h2{
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .sidebar a{
+    margin: 0 8px;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .logout{
+    margin-top: 0;
+  }
+
+  .main{
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+
+
   </style>
 </head>
 
