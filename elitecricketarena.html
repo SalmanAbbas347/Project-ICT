@@ -14,12 +14,20 @@
 
     * {
       box-sizing: border-box;
-      font-family: Arial
+      font-family: Arial;
+    }
+
+    /* FULL PAGE FLEX TO KEEP FOOTER AT BOTTOM */
+    html, body {
+      height: 100%;
+      margin: 0;
     }
 
     body {
-      margin: 0;
-      background: var(--bg)
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: var(--bg);
     }
 
     /* NAV */
@@ -40,7 +48,7 @@
     }
 
     .navbar a {
-      text-decoration: none
+      text-decoration: none;
     }
 
     .logo {
@@ -58,23 +66,23 @@
 
     .bookings a:hover,
     .nav-links a:hover {
-      color: #007bff
+      color: #007bff;
     }
 
     /* LAYOUT */
     .container {
+      flex: 1; /* makes container expand to push footer down */
       display: flex;
       gap: 25px;
-      padding: 60px 40px;
-      padding-bottom: 10px;
+      padding: 80px 40px 10px 40px; /* top padding for fixed header */
     }
 
     .left {
-      flex: 2
+      flex: 2;
     }
 
     .right {
-      flex: 1
+      flex: 1;
     }
 
     .card {
@@ -101,16 +109,16 @@
     .calendar,
     .times {
       display: grid;
-      gap: 8px
+      gap: 8px;
     }
 
     .calendar {
-      grid-template-columns: repeat(7, 1fr)
+      grid-template-columns: repeat(7, 1fr);
     }
 
     .times {
       grid-template-columns: repeat(3, 1fr);
-      margin-top: 10px
+      margin-top: 10px;
     }
 
     .calendar div,
@@ -195,6 +203,57 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
     }
+
+    /* MOBILE RESPONSIVENESS */
+    @media (max-width: 480px) {
+      .container {
+        flex-direction: column;
+        padding: 70px 10px 10px 10px;
+      }
+
+      .left,
+      .right {
+        flex: 1;
+      }
+
+      .calendar {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .times {
+        grid-template-columns: 1fr;
+      }
+
+      .ground-img {
+        height: 180px;
+      }
+
+      .card {
+        padding: 15px;
+      }
+
+      .amenities-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+      }
+
+      .bookings a,
+      .nav-links a {
+        margin: 5px 10px 0 0;
+        font-size: 0.9em;
+      }
+
+      .footer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
@@ -229,8 +288,8 @@
         <p>📍 Lahore</p>
         <p>Professional cricket arena with turf wickets and floodlights.</p>
 
-        <img src="https://www.dugoutchennai.com/wp-content/uploads/2022/12/image_cricket-2.jpg" alt="Cricket Ground"
-          class="ground-img">
+        <img src="https://www.dugoutchennai.com/wp-content/uploads/2022/12/image_cricket-2.jpg"
+          alt="Cricket Ground" class="ground-img">
 
         <div class="amenities">
           <h3>Amenities</h3>
@@ -324,37 +383,26 @@
   <script>
     var popup = document.getElementById("popup");
 
-
     var dates = document.querySelectorAll("#dates div");
-
     for (var i = 0; i < dates.length; i++) {
       dates[i].onclick = function () {
-
-
         for (var j = 0; j < dates.length; j++) {
           dates[j].classList.remove("active");
         }
-
-
         this.classList.add("active");
       };
     }
 
-
     var times = document.querySelectorAll(".time");
-
     for (var i = 0; i < times.length; i++) {
       times[i].onclick = function () {
-
-
         for (var j = 0; j < times.length; j++) {
           times[j].classList.remove("selected");
         }
-
-
         this.classList.add("selected");
       };
     }
+
     function book() {
       popup.style.display = "flex";
     }
@@ -363,7 +411,6 @@
       popup.style.display = "none";
     }
   </script>
-
 
 </body>
 

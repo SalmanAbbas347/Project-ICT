@@ -19,6 +19,9 @@
 body{
   margin:0;
   background:var(--bg);
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
 }
 
 /* NAV */
@@ -68,6 +71,7 @@ body{
   gap:25px;
   padding:60px 40px;
   padding-bottom: 10px;
+  flex:1;
 }
 .left{flex:2}
 .right{flex:1}
@@ -195,9 +199,6 @@ button{
   margin:8px 0;
   font-size:14px;
 }
-
-
-
 </style>
 </head>
 
@@ -352,4 +353,3 @@ button{
 
 </body>
 </html>
-
