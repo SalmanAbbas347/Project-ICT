@@ -12,7 +12,19 @@
 }
 
 *{box-sizing:border-box;font-family:Arial}
-body{margin:0;background:var(--bg)}
+
+/* FULL PAGE FLEX TO KEEP FOOTER AT BOTTOM */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+}
 
 /* NAV */
 .site-header{
@@ -46,8 +58,8 @@ body{margin:0;background:var(--bg)}
 .container{
   display:flex;
   gap:25px;
-  padding:60px 40px;
-  padding-bottom: 10px;
+  padding:80px 40px 10px 40px; /* extra top padding for fixed header */
+  flex: 1; /* expands to push footer down */
 }
 .left{flex:2}
 .right{flex:1}
@@ -148,6 +160,55 @@ button{
   padding:40px;
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 480px) {
+  .container{
+    flex-direction: column;
+    padding:70px 10px 10px 10px;
+  }
+
+  .left, .right{
+    flex:1;
+  }
+
+  .calendar{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .times{
+    grid-template-columns:1fr;
+  }
+
+  .court-img{
+    height:180px;
+  }
+
+  .card{
+    padding:15px;
+  }
+
+  .amenities-grid{
+    grid-template-columns:1fr;
+  }
+
+  .navbar{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:10px;
+  }
+
+  .bookings a, .nav-links a{
+    margin:5px 10px 0 0;
+    font-size:0.9em;
+  }
+
+  .footer{
+    grid-template-columns:1fr;
+    gap:20px;
+    text-align:center;
+  }
 }
 </style>
 </head>
@@ -262,37 +323,26 @@ button{
 <script>
     var popup = document.getElementById("popup");
 
-
     var dates = document.querySelectorAll("#dates div");
-
     for (var i = 0; i < dates.length; i++) {
       dates[i].onclick = function () {
-
-
         for (var j = 0; j < dates.length; j++) {
           dates[j].classList.remove("active");
         }
-
-
         this.classList.add("active");
       };
     }
 
-
     var times = document.querySelectorAll(".time");
-
     for (var i = 0; i < times.length; i++) {
       times[i].onclick = function () {
-
-
         for (var j = 0; j < times.length; j++) {
           times[j].classList.remove("selected");
         }
-
-
         this.classList.add("selected");
       };
     }
+
     function book() {
       popup.style.display = "flex";
     }
@@ -300,7 +350,8 @@ button{
     function closePop() {
       popup.style.display = "none";
     }
-  </script>
+</script>
 
 </body>
 </html>
+
