@@ -237,6 +237,135 @@
     .footer-right a:hover {
       opacity: 1;
     }
+
+    /* ========= RESPONSIVE ========= */
+/* ================= MOBILE RESPONSIVENESS ================= */
+@media (max-width: 768px) {
+
+  /* Header / Navbar */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .nav-links,
+  .bookings {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .nav-links a,
+  .bookings a {
+    font-size: 14px;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 35px 15px 45px;
+    height: auto;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+
+  /* Search Box */
+  .search-box {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .search-box button {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  /* Featured Venues Section */
+  .featured-venues {
+    padding: 35px 12px;
+  }
+
+  .featured-venues h2 {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .featured-venues p {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  /* Venue Cards */
+  .venue-card {
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  .venue-card img {
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .venue-info h3 {
+    font-size: 18px;
+  }
+
+  .rating {
+    font-size: 14px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 35px 15px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
+
+
+
   </style>
 </head>
 
