@@ -19,6 +19,9 @@
 body{
   margin:0;
   background:var(--bg);
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
 }
 
 /* NAV */
@@ -68,6 +71,7 @@ body{
   gap:25px;
   padding:60px 40px;
   padding-bottom: 10px;
+  flex:1;
 }
 .left{flex:2}
 .right{flex:1}
@@ -194,6 +198,54 @@ button{
 .footer p{
   margin:8px 0;
   font-size:14px;
+}
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 480px) {
+  .container{
+    flex-direction: column;
+    padding:70px 10px 10px 10px;
+  }
+
+  .left, .right{
+    flex:1;
+  }
+
+  .calendar{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .times{
+    grid-template-columns:1fr;
+  }
+
+  .court-img{
+    height:180px;
+  }
+
+  .card{
+    padding:15px;
+  }
+
+  .amenities-grid{
+    grid-template-columns:1fr;
+  }
+
+  .navbar{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:10px;
+  }
+
+  .bookings a, .nav-links a{
+    margin:5px 10px 0 0;
+    font-size:0.9em;
+  }
+
+  .footer{
+    grid-template-columns:1fr;
+    gap:20px;
+    text-align:center;
+  }
 }
 </style>
 </head>
@@ -349,4 +401,3 @@ button{
 
 </body>
 </html>
-
